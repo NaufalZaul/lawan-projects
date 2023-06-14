@@ -1,0 +1,16 @@
+@import url("../App.css");
+
+.label-statistik-masuk {
+  width: 13px;
+  height: 13px;
+  margin-right: 10px;
+  background-color: blue;
+  border-radius: 100%;
+}
+.label-statistik-selesai {
+  width: 13px;
+  height: 13px;
+  margin-right: 10px;
+  background-color: orange;
+  border-radius: 100%;
+}

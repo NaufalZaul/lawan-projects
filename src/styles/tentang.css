@@ -1,0 +1,15 @@
+@import url("../App.css");
+
+.vision span {
+  width: 2rem;
+  height: 7rem;
+  display: inline-block;
+}
+.grooves .col {
+  width: 5rem;
+  height: 10rem;
+}
+
+.grooves .position-absolute {
+  top: -30px;
+}

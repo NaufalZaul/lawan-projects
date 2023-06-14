@@ -1,0 +1,21 @@
+@import url("../App.css");
+
+.row .card-contact .card {
+  border: none !important;
+  background: linear-gradient(to bottom, #005879, #004064) !important;
+}
+
+.row .card-contact .card.orange {
+  background: linear-gradient(to bottom, #e9c46a, #f4a261) !important;
+}
+
+.row .card-contact .card .card-body {
+  background-color: #fff;
+  border-radius: 0.775rem;
+}
+
+@media (min-width: 998px) {
+  .jumbotron {
+    width: 25%;
+  }
+}

@@ -1,0 +1,14 @@
+@import url("../App.css");
+
+.active-menu {
+  background-color: var(--primary-blue);
+  color: #fff;
+}
+.nav {
+  min-width: 15rem;
+}
+.nav-link:focus,
+.nav-link:hover {
+  background-color: var(--primary-blue);
+  color: #fff;
+}

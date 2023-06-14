@@ -1,0 +1,52 @@
+@import url("../App.css");
+
+.header {
+  height: 85vh;
+}
+
+.dump-box-width {
+  width: 12rem;
+  height: 5rem;
+  display: inline-block;
+  background-color: blue;
+}
+.dump-box-height {
+  width: 10rem;
+  height: 13rem;
+  display: inline-block;
+}
+
+.dump-image-width {
+  height: 10rem;
+  object-fit: cover;
+}
+.dump-image-height {
+  width: 12rem;
+  height: 17rem;
+  object-fit: cover;
+}
+
+.objective {
+  width: 40rem;
+  margin: auto;
+}
+
+.support {
+  height: 70vh;
+}
+.support-image-one {
+  width: 12rem;
+  height: 15rem;
+  object-fit: cover;
+  margin-top: 4rem;
+}
+.support-image-two {
+  width: 25rem;
+  height: 15rem;
+  object-fit: cover;
+  margin-bottom: 4rem;
+}
+.quotes img {
+  height: 20rem;
+  object-fit: cover;
+}
