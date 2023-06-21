@@ -164,13 +164,8 @@
 
 /* BORDER */
 .border-amber {
-  border: 5px 5px
-    linear-gradient(
-      180deg,
-      rgba(233, 196, 106, 1) 0%,
-      rgba(244, 162, 97, 1) 100%
-    );
+  border: 5px solid var(--secondary-amber);
 }
 .border-blue {
-  border: 5px 5px var(--linear-gradient-blue);
+  border: 5px solid var(--primary-blue);
 }

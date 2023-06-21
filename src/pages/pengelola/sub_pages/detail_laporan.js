@@ -1,35 +1,13 @@
 import { Link } from 'react-router-dom'
-// id_pelapor
-// : 
-// "-NXsX356dgPVwFSTpieU"
-// id_polsek
-// : 
-// "-NXsKgeUC3_C8Xt9lgvM"
-// isi_laporan
-// : 
-// "Saya mendapatkan kekerasan secara fisik maupun psikis di sekolah, saya sering di buli dan di hajar oleh teman kelas saya sendiri hingga saya mendapatkan luka lebam yang sangat serius. saya ingin bisa belajar dengan tenang dan saya ingin  menjadi seperti murid normal lainnya yang tidak kena buli, dan saya harap yang membuli saya dapat di proses dan ditindak lanjuti dan  diberi arahan langsung oleh pihak yang berwajib agar tidak ada lagi korban yang akan bernasip sama seperti saya."
-// jenis_kekerasan
-// : 
-// "Pembullyan"
-// judul_laporan
-// : 
-// "Pembullyan Sesama Teman Bermain"
-// lokasi_kejadian
-// : 
-// "Desa Waduk"
-// status_laporan
-// : 
-// "masuk"
-// tanggal_kejadian
-// : 
-// "29/01/2023"
-// unggah_bukti
-// : 
-// ""
+import StorageImage from '../../../api/storage_firebase'
+
+
+const storageImage = StorageImage()
+
 export default function DetailLaporan({ detail, backpage }) {
   return (
-    <div class="container bg-secondary-subtle p-3 row">
-      <div class="col-8 d-flex flex-column justify-content-between bg-white p-4">
+    <div class="w-100 container bg-secondary-subtle p-3 row justify-content-center">
+      <div class="col-7 d-flex flex-column justify-content-between bg-white p-4">
         <div class="">
           <Link to={`/kelola/laporan_${backpage}`}
             state={{ defaultUrl: backpage }}>
@@ -58,6 +36,16 @@ export default function DetailLaporan({ detail, backpage }) {
             <p className="paragraf">{detail.isi_laporan}</p>
           </div>
         </div>
+        <div class="row row-cols-4 my-5">
+          <img src={storageImage[1]} alt="" class="my-2" />
+          <img src={storageImage[1]} alt="" class="my-2" />
+          <img src={storageImage[1]} alt="" class="my-2" />
+          <img src={storageImage[1]} alt="" class="my-2" />
+          <img src={storageImage[1]} alt="" class="my-2" />
+          <img src={storageImage[1]} alt="" class="my-2" />
+          <img src={storageImage[1]} alt="" class="my-2" />
+        </div>
+
         <div class="d-flex justify-content-between">
           <button type="submit" className="btn button button-danger">
             Tolak
@@ -73,11 +61,36 @@ export default function DetailLaporan({ detail, backpage }) {
           </button>
         </div>
       </div>
-      <div class="col-4 bg-blue">
-        <img src="" alt="" />
-        <div class="">
-
+      <div class="col-4 bg-blue text-white">
+        <div class="text-center my-4">
+          {/* <img className='' src={storageImage[0]} alt="" class="" /> */}
         </div>
+        <table class="table table-borderless">
+          <thead>
+          </thead>
+          <tbody className='text-white'>
+            <tr>
+              <td scope='row'>Nama</td>
+              <td colSpan={2}>: Zulkarnain</td>
+            </tr>
+            <tr>
+              <td scope='row'>NIK</td>
+              <td colSpan={2}>: 01234567230158901</td>
+            </tr>
+            <tr>
+              <td scope='row'>TTL</td>
+              <td colSpan={2}>: Batam, 23 Januari 1985</td>
+            </tr>
+            <tr>
+              <td scope='row'>Telp</td>
+              <td colSpan={2}>: 091234567890</td>
+            </tr>
+            <tr>
+              <td scope='row'>Alamat</td>
+              <td colSpan={2}>: Tiban Mas blok AAA 100, Rt 02, Rw 05, TibanLama, Sekupang, Batam</td>
+            </tr>
+          </tbody>
+        </table>
       </div>
     </div>
   )

@@ -2,14 +2,14 @@ import React, { useEffect, useState } from "react";
 import Button from "../../components/button";
 import { Link } from 'react-router-dom'
 import SistemDataPengelola from "../../api/sistem_data_pengelola";
-
+import { Modal } from "../../components/modal";
+import StorageImage from "../../api/storage_firebase";
 
 const $ = require('jquery');
 $.DataTable = require('datatables.net');
 
 
-
-export function controlTable() {
+function controlTable() {
   setTimeout(() => {
     const table = $('#example').DataTable({
       "columnDefs": [{
@@ -36,6 +36,26 @@ export function controlTable() {
 export default function Laporan({ table, page }) {
 
   const sistemDataPengelola = SistemDataPengelola()
+  const storageImage = StorageImage()
+
+
+  // sistemDataPengelola.map((val, key) => {
+
+  // })
+  // console.log(sistemDataPengelola);
+
+  // for (const key in sistemDataPengelola) {
+  //   // console.log(key);
+  //   if (Object.hasOwnProperty.call(sistemDataPengelola, key)) {
+  //     // const element = sistemDataPengelola[key];
+  //     // const newData = {
+  //     //   idData: key,
+  //     //   element: element
+  //     // }
+  //     // dataArr.push(newData)
+  //   }
+  // }
+
 
   return (
     <div class="container bg-secondary-subtle pt-2">
@@ -65,9 +85,14 @@ export default function Laporan({ table, page }) {
           </thead>
           <tbody>
             {
+
               sistemDataPengelola.map((value, key) => (value.status_laporan == table) ? (
                 <tr key={key} className="text-style-paragraf align-middle" id="data-laporan">
-                  <td className="text-center"></td>
+                  {/* <Modal.ModalTerima keyData={key} data={value} /> */}
+
+                  <td className="text-center" scope='row'>
+                    {/* <img className="w-25" src='images/foto.png' alt="" style={{ height: '100px', width: '100px' }} /> */}
+                  </td>
                   <td>{value.judul_laporan}</td>
                   <td className="text-center">{value.jenis_kekerasan}</td>
                   <td className="text-center">{value.tanggal_kejadian}</td>
@@ -78,7 +103,7 @@ export default function Laporan({ table, page }) {
                           state={{
                             detailData: sistemDataPengelola[key], backpage: page
                           }}>
-                          <Button.ButtonPrint />
+                          <Button.ButtonDetail />
                         </Link>
                         <Button.ButtonTolak />
                       </td>
@@ -88,10 +113,11 @@ export default function Laporan({ table, page }) {
                           state={{
                             detailData: sistemDataPengelola[key], backpage: page
                           }}>
-                          <Button.ButtonPrint />
+                          <Button.ButtonDetail />
                         </Link>
                         <Button.ButtonTolak />
                         <Button.ButtonTerima />
+
                       </td>
                     ) : (
                       <td className="text-center">
@@ -99,8 +125,9 @@ export default function Laporan({ table, page }) {
                           state={{
                             detailData: sistemDataPengelola[key], backpage: page
                           }}>
-                          <Button.ButtonPrint />
+                          <Button.ButtonDetail />
                         </Link>
+
                       </td>
                     )
                   }
@@ -111,6 +138,11 @@ export default function Laporan({ table, page }) {
           </tbody>
         </table>
       </div>
+
+      <Modal.ModalTerima />
+      <Modal.ModalTolak />
+      <Modal.ModalBerhasil />
+
     </div>
   )
 };

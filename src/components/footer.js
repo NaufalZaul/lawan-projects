@@ -3,9 +3,9 @@ import { Link } from "react-router-dom";
 export default function Footer() {
   return (
     <div class="row bg-blue text-white mt-5 p-5">
-      <div class="col-4">
+      <div class="col-3">
         <h1 className="bold-heading-1">
-          <img className="w-50" src="./images/logo-large-white.png" alt="" />
+          <img className="" src="./images/logo-large-white.png" alt="" />
         </h1>
         <p className="text-style-label">Lawan dan laporkan tindak kekerasan</p>
       </div>
@@ -25,7 +25,7 @@ export default function Footer() {
           </li>
         </ul>
       </div>
-      <div class="col d-flex justify-content-end p-2">
+      <div class="col d-flex justify-content-evenly p-2">
         <div class="me-5">
           <h5 className="text-style-navbar">Kunjungi</h5>
           <div class="d-flex">

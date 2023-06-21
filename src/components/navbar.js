@@ -8,9 +8,15 @@ export function NavbarPengelola() {
       <div class="semi-heading-1">
         <img className="w-50" src="./images/logo-large-white.png" alt="" />
       </div>
-      <div class="text-style-label">
-        {polsek[0].nama}
-        <i class="fas fa-user-circle mx-2" style={{ color: '#ffffff' }}></i>
+      <div class="dropdown">
+        <button class="btn text-white dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+          {polsek[0].nama}
+        </button>
+        <ul class="dropdown-menu">
+          <Link to="/" className="text-decoration-none">
+            <li><a class="dropdown-item" href="#">Keluar</a></li>
+          </Link>
+        </ul>
       </div>
     </nav>
   )
@@ -19,18 +25,18 @@ export function NavbarPengelola() {
 
 
 export function NavbarPengguna() {
-  // console.log(window.location.)/;
-  // window.addEventListener('scroll', () => {
-  //   (window.scrollY > 0) ?
-  //     document.querySelector('nav').classList.add('shadow') :
-  //     document.querySelector('nav').classList.remove('shadow')
-  // })
+
+  window.addEventListener('scroll', () => {
+    (window.scrollY > 0) ?
+      document.querySelector('nav').classList.add('shadow') :
+      document.querySelector('nav').classList.remove('shadow')
+  })
 
   return (
     <nav class="sticky-top navbar navbar-expand-lg bg-white px-5 text-style-navbar">
       <div class="container-fluid">
         <Link to="/" class="navbar-brand">
-          <img className="w-50" src="./images/logo-large.jpg" alt="" />
+          <img className="" src="./images/logo-large.png" alt="" />
         </Link>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>

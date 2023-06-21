@@ -1,3 +1,6 @@
+
+
+
 export default function Beranda() {
   return (
     <div class="px-5">
@@ -31,44 +34,46 @@ export default function Beranda() {
         <p class="mb-3 text-style-navbar objective">Didedikasikan untuk masyarakat Kota Batam yang berperang dalam kesejahteraan fisik dan psikis</p>
         <span className="text-style-label">Tertanda Lawan!</span>
       </div>
+
       <div class="row align-items-center support ">
         <div class="col-2">
-          <img className="rounded-3 support-image-one" src="./images/image-42.jpg" alt="" />
+          <img className="rounded-3 support-image-one" src="./images/image-41.jpg" alt="" />
         </div>
         <div class="col-6 px-5">
           <p class="normal-heading-3">Tidak ada yang lebih <span className="text-danger"> berbahaya </span> daripada <span class="text-danger">kekerasan</span> yang dilakukan oleh orang-orang yang <span class="text-danger"> bermaksud buruk</span> untuk tujuan yang menguntungkan</p>
           <button type="submit" className="btn text-style-button button-amber">Pelajari Selengkapnya</button>
         </div>
         <div class="col-4">
-          <img className="rounded-3 support-image-two" src="./images/image-42.jpg" alt="" />
+          <img className="rounded-3 support-image-two" src="./images/image-42.png" alt="" />
         </div>
       </div>
+
       <div class="row w-100 m-auto justify-content-center my-5">
-        <div class="col-3 mt-5 mx-3 p-3 border border-primary rounded-3 text-center bg-secondary-subtle">
+        <div class="col-3 mt-5 mx-3 p-3 rounded-3 text-center border-amber">
           <div class="my-4">
-            <img className="w-25 rounded-3" src="./images/image-34.jpg" alt="" />
+            <img className="w-25 rounded-3" src="./images/kesejahteraan.png" alt="" />
           </div>
-          <h5 className="text-uppercase text-style-label">kesejahteraan</h5>
-          <p className="text-style-paragraf mb-4">Membantu membela kesejahteraan korban tindakan kekerasan dengan membantu melaporkan</p>
+          <h5 className="text-uppercase text-style-label">Kesejahteraan</h5>
+          <p className="text-style-paragraf mb-4">Membantu membela kesejahteraan  korban tindakan kekerasan dengan membantu melaporkan.</p>
         </div>
-        <div class="col-3 h-100 mx-3 p-3 border border-primary rounded-3 text-center bg-secondary-subtle">
+        <div class="col-3 h-100 mx-3 p-3 rounded-3 text-center border-amber">
           <div class="my-4">
-            <img className="w-25 rounded-3" src="./images/image-35.jpg" alt="" />
+            <img className="w-25 rounded-3" src="./images/perlindungan.png" alt="" />
           </div>
-          <h5 className="text-uppercase text-style-label">kesejahteraan</h5>
-          <p className="text-style-paragraf mb-4">Membantu membela kesejahteraan korban tindakan kekerasan dengan membantu melaporkan</p>
+          <h5 className="text-uppercase text-style-label">Perlindungan</h5>
+          <p className="text-style-paragraf mb-4">Membantu memberi perlindungan dari pihak kepolisian, lembaga sosial, atau pihak lainnya.</p>
         </div>
-        <div class="col-3 mt-5 mx-3 p-3 border border-primary rounded-3 text-center bg-secondary-subtle">
+        <div class="col-3 mt-5 mx-3 p-3 rounded-3 text-center border-amber">
           <div class="my-4">
-            <img className="w-25 rounded-3" src="./images/image-36.jpg" alt="" />
+            <img className="w-25 rounded-3" src="./images/kesehatan.png" alt="" />
           </div>
-          <h5 className="text-uppercase text-style-label">kesejahteraan</h5>
-          <p className="text-style-paragraf mb-4">Membantu membela kesejahteraan korban tindakan kekerasan dengan membantu melaporkan</p>
+          <h5 className="text-uppercase text-style-label">Kesehatan</h5>
+          <p className="text-style-paragraf mb-4">Membantu memberi layanan kesehatan meliputi pemeriksaan, tindakan, dan perawatan medis.</p>
         </div>
       </div>
       <div class="row align-items-center w-100 m-auto my-5 rounded-3 quotes bg-blue">
         <div class="col-6 p-0">
-          <img className="w-100 rounded-start-3 " src="./images/unsplash_DRzYMtae-vA.jpg" alt="" />
+          <img className="w-100 rounded-start-3 " src="./images/unsplash_DRzYMtae-vA.png" alt="" />
         </div>
         <div class="col-6 text-white px-5">
           <h5 className="me-5 normal-heading-3">" Kekerasan bagaikan rumput liar yang tidak akan mati dimusim kemarau "</h5>
@@ -77,12 +82,12 @@ export default function Beranda() {
       </div>
       <div class="d-flex align-items-center justify-content-center my-5">
         <div class="">
-          <img className="w-75 rounded-start-3 " src="./images/apps.jpg" alt="" />
+          <img className="w-75 rounded-start-3 " src="./images/mockup-beranda.png" alt="" />
         </div>
         <div class="w-50">
           <h1 className="semi-heading-1">Ayo Lawan Kekerasan di Kota Batam</h1>
           <p className="my-4 normal-heading-3">Download Aplikasinya sekarang</p>
-          <img className="w-25 rounded-start-3 " src="./images/Google Play.png" alt="" />
+          <img className=" rounded-start-3 " src="./images/Google Play.png" alt="" />
         </div>
       </div>
     </div>

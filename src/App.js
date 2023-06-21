@@ -25,13 +25,17 @@ import Login from './pages/login/login';
 import Tentang from './pages/halaman_utama/tentang';
 import Edukasi from './pages/halaman_utama/edukasi';
 import Kontak from './pages/halaman_utama/kontak';
+import SuperAdmin from './pages/superadmin/superadmin';
+import DetailArtikel from './pages/halaman_utama/sub_pages/detail_artikel';
 
 // firebase
 import "./api/firebase"
-
+// import { updateData } from './api/sistem_data_pengelola';
+// updateData('-NYRRNTtbA5x9FNRygGl', 'mencoba', 'mencoba', 'mencoba', 'mencoba', 'mencoba', 'mencoba', 'mencoba', 'mencoba', 'ahaha')
 
 function App() {
   const { state } = useLocation();
+  // console.log(state);
 
   const pathname = window.location.pathname
     .split('')
@@ -42,11 +46,13 @@ function App() {
     <div className="App">
       {
         pathname == '/kelola' ? <NavbarPengelola /> :
-          window.location.pathname == '/login' ? '' : <NavbarPengguna />
+          pathname !== '/login' ? <NavbarPengguna /> : ''
       }
       <div {...(pathname == '/kelola') ? { className: 'd-flex' } : ''}>
         {pathname == '/kelola' ? <SideBar /> : ''}
         <Routes>
+          {/* superadmin */}
+          <Route path="/superadmin" element={<SuperAdmin />} />
 
           {/* sisi pengguna */}
           <Route path="/" element={<Beranda />} />
@@ -71,6 +77,9 @@ function App() {
                     detail={state.detailData}
                     backpage={state.backpage} />}
                 />
+                <Route path="/edukasi/detail_artikel"
+                  element={<DetailArtikel
+                    artikel={state.artikel} />} />
               </>
               : ''
           }

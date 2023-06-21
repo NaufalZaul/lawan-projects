@@ -12,28 +12,14 @@ export default function Pengelola() {
         </div>
       </section>
 
-      <main id="main">
-        <section id="" class="">
-          <div class="container">
-            <div class="row">
-              <div class="col-md-6">
-                <div class="card">
-                  <div class="card-body">
-                    <h5 class="card-title">Polsek (Kepolisian Sektor)</h5>
-                    <p class="card-text">Kami bekerja sama dengan kepolisian republik indonesia terutama kepolisian sektor yang ada di kota Batam, nantinya laporan yang masuk akan dikelola oleh polsek di masing masing wilayah pelapor.</p>
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-6">
-                <div class="card">
-                  <div class="card-body">
-                    <img src="./images/Vector.png" alt="Kepolisian" />
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
+      <main id="main" className='w-100 row header justify-content-center align-content-center align-items-center'>
+        <div class="col-5">
+          <h2 class="card-title semi-heading-2 text-blue">Polsek (Kepolisian Sektor)</h2>
+          <p class="card-text text-style-label">Kami bekerja sama dengan kepolisian republik indonesia terutama kepolisian sektor yang ada di kota Batam, nantinya laporan yang masuk akan dikelola oleh polsek di masing masing wilayah pelapor.</p>
+        </div>
+        <div class="col-5">
+          <img className='rounded-3' src="./images/Rectangle-818.png" alt="" />
+        </div>
       </main>
     </div>
   )

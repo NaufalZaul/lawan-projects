@@ -34,7 +34,7 @@ export default function Login() {
       </div>
       <div class="login-content">
         <div className='form'>
-          <img className='mb-4 w-50' src="./images/logo-large.jpg" />
+          <img className='mb-4 ' src="./images/logo-large.png" />
           <h2 class="mb-3 bold-heading-2">LOGIN PENGELOLA</h2>
           <div class="input-div one text-style-navbar">
             <div class="i">

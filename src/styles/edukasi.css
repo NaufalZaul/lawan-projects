@@ -1,5 +1,59 @@
 @import url("../App.css");
 
-.header-edukasi {
-  height: 50vh;
+:root {
+  --bs-primary-rgb: 0, 88, 121;
+  --bs-warning-rgb: 233, 196, 106;
+}
+body {
+  font-family: "Poppins", sans-serif;
+}
+.hstack img {
+  width: 100%;
+}
+.-lawan {
+  transform: rotate(-2.37deg);
+  background: linear-gradient(to bottom, #e9c46a, #f4a261);
+}
+.lawan {
+  transform: rotate(2.37deg);
+  background: linear-gradient(to bottom, #005879, #004064);
+  color: #fff;
+}
+.sikitbangda-1 {
+  background: linear-gradient(to bottom, #cf7a37, #d7a837);
+  padding: 1.25rem;
+  color: #fff;
+  width: 10rem;
+  text-align: center;
+  border-radius: 1rem;
+}
+.sikitbangda-2 {
+  /* width: 30%; */
+  padding: 1.5rem;
+  text-align: center;
+}
+@media (width >= 720px) {
+  .sikitbangda-2 {
+    width: 30%;
+  }
+  .hstack img {
+    width: auto;
+  }
+  .hstack p {
+    width: 25%;
+  }
+}
+.sikitbangda-3 {
+  background: linear-gradient(to bottom, #005879, #004064);
+  padding: 1.25rem;
+  color: #fff;
+  width: 10rem;
+  text-align: center;
+  border-radius: 1rem;
+}
+.box {
+  width: 55px;
+  height: 55px;
+  background-color: #fff;
+  border-radius: 1rem;
 }

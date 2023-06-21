@@ -15,6 +15,8 @@ import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, si
 // import { getFirestore } from 'https://www.gstatic.com/firebasejs/9.22.1/firebase-firestore.js'
 import { getDatabase, set, ref, update, onValue } from 'https://www.gstatic.com/firebasejs/9.22.1/firebase-database.js'
 
+import { getStorage } from 'https://www.gstatic.com/firebasejs/9.22.1/firebase-storage.js'
+
 
 
 // Your web app's Firebase configuration
@@ -34,5 +36,4 @@ const firebaseConfig = {
 export const app = initializeApp(firebaseConfig);
 export const analytics = getAnalytics(app);
 export const database = getDatabase(app);
-
-
+export const storage = getStorage(app)
