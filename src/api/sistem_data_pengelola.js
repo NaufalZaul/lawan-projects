@@ -1,40 +1,28 @@
-import { ref, onValue, push, update, get, put, set, child, onUpdate } from 'https://www.gstatic.com/firebasejs/9.22.1/firebase-database.js'
+import { ref, onValue, set, get, child, remove } from 'https://www.gstatic.com/firebasejs/9.22.1/firebase-database.js'
 import { database } from './firebase';
 
+export function updateDataLaporan(dataId, dataPengelola, status) {
 
-// const refDB = ref(database, 'coba/');
-// export function updateData(dataId, status) {
+  set(child(ref(database), 'laporan/' + dataId), {
+    id_pelapor: dataPengelola.element.id_pelapor,
+    id_polsek: dataPengelola.element.id_polsek,
+    isi_laporan: dataPengelola.element.isi_laporan,
+    jenis_kekerasan: dataPengelola.element.jenis_kekerasan,
+    judul_laporan: dataPengelola.element.judul_laporan,
+    lokasi_kejadian: dataPengelola.element.lokasi_kejadian,
+    status_laporan: status.status,
+    tanggal_kejadian: dataPengelola.element.tanggal_kejadian,
+    unggah_bukti: dataPengelola.element.unggah_bukti,
+  }).then((e) => console.log('success'))
 
-// -NYRRNTtbA5x9FNRygGl
+}
 
-
-// export function updateData(dataId, id_pelapor, id_polsek, isi_laporan, jenis_kekerasan, judul_laporan, lokasi_kejadian, status_laporan, tanggal_kejadian, unggah_bukti) {
-export function updateData(dataId, dataPengelola) {
-  // console.log(dataId)
-  // console.log(dataPengelola)
-
-  // const refDB = ref(database);
-
-  // set(child(ref(database), 'coba/' + dataId), {
-
-  //   id_pelapor: id_pelapor,
-  //   id_polsek: id_polsek,
-  //   isi_laporan: isi_laporan,
-  //   jenis_kekerasan: jenis_kekerasan,
-  //   judul_laporan: judul_laporan,
-  //   lokasi_kejadian: lokasi_kejadian,
-  //   status_laporan: status_laporan,
-  //   tanggal_kejadian: tanggal_kejadian,
-  //   unggah_bukti: unggah_bukti,
-  // }).then((e) => {
-  //   console.log(e);
-  // })
-
+export function hapusDataLaporan(dataId) {
+  set(child(ref(database), 'laporan/' + dataId), {})
 }
 
 export default function SistemDataPengelola() {
   const dataArr = [];
-  // const idArr = []
   const refDB = ref(database, 'laporan/');
 
   // polseklububaja polseklububaja457212
@@ -46,10 +34,10 @@ export default function SistemDataPengelola() {
       if (Object.hasOwnProperty.call(data, key)) {
         const element = data[key];
         const newData = {
-          [`${key}`]: element
+          idData: key,
+          element: element
         }
-        dataArr.push(element)
-        // console.log(newData);
+        dataArr.push(newData)
       }
     }
   })

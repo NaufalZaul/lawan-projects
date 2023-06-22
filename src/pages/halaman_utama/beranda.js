@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom"
 
 
 
@@ -8,7 +9,9 @@ export default function Beranda() {
         <div class="position-absolute w-50 top-0 start-0 end-0 m-auto mt-5 text-center">
           <h1 className="semi-heading-1">Lawan!</h1>
           <h2 className="normal-heading-2 m-4">Membantu membela kesejahteraan korban tindak <span className="text-danger">kekerasan</span> dengan melaporkan</h2>
-          <button type="submit" className="btn text-style-button button-amber">Jelajahi</button>
+          <a href="#label">
+            <button type="submit" className="btn text-style-button button-amber">Jelajahi</button>
+          </a>
         </div>
 
         <div class="col-4 d-flex flex-row-reverse align-items-end">
@@ -30,7 +33,7 @@ export default function Beranda() {
         </div>
       </div>
 
-      <div class="p-5 text-center text-white rounded-4 bg-blue">
+      <div class="p-5 text-center text-white rounded-4 bg-blue" id="label">
         <p class="mb-3 text-style-navbar objective">Didedikasikan untuk masyarakat Kota Batam yang berperang dalam kesejahteraan fisik dan psikis</p>
         <span className="text-style-label">Tertanda Lawan!</span>
       </div>
@@ -41,7 +44,9 @@ export default function Beranda() {
         </div>
         <div class="col-6 px-5">
           <p class="normal-heading-3">Tidak ada yang lebih <span className="text-danger"> berbahaya </span> daripada <span class="text-danger">kekerasan</span> yang dilakukan oleh orang-orang yang <span class="text-danger"> bermaksud buruk</span> untuk tujuan yang menguntungkan</p>
-          <button type="submit" className="btn text-style-button button-amber">Pelajari Selengkapnya</button>
+          <Link to="/edukasi">
+            <button type="submit" className="btn text-style-button button-amber">Pelajari Selengkapnya</button>
+          </Link>
         </div>
         <div class="col-4">
           <img className="rounded-3 support-image-two" src="./images/image-42.png" alt="" />
@@ -77,10 +82,57 @@ export default function Beranda() {
         </div>
         <div class="col-6 text-white px-5">
           <h5 className="me-5 normal-heading-3">" Kekerasan bagaikan rumput liar yang tidak akan mati dimusim kemarau "</h5>
-          <button type="submit" className="btn text-style-button button-amber mt-3">Laporan Sekarang</button>
+          <Link to="/tentang">
+            <button type="submit" className="btn text-style-button button-amber mt-3">Laporan Sekarang</button>
+          </Link>
         </div>
       </div>
-      <div class="d-flex align-items-center justify-content-center my-5">
+      <div class="m-auto text-center p-5">
+        <h2 class="semi-heading-2 my-5">Alur Pelaporan</h2>
+        <div class="row grooves px-5 py-3 justifi-content-center">
+          <div class="col position-relative mx-1 d-flex justify-content-center align-items-center rounded-3 border-amber">
+            <div class="position-absolute bg-blue text-white py-2 px-4 rounded-circle">
+              <h1 class="normal-heading-3 m-0">1</h1>
+            </div>
+            <h3 class="text-style-label">Buat Laporan</h3>
+          </div>
+          <div class="col position-relative mx-1 d-flex justify-content-center align-items-center rounded-3 border-amber">
+            <div class="position-absolute bg-blue text-white py-2 px-4 rounded-circle">
+              <h1 class="normal-heading-3 m-0">2</h1>
+            </div>
+            <h3 class="text-style-label">Laporan diverifikasi</h3>
+          </div>
+          <div class="col position-relative mx-1 d-flex justify-content-center align-items-center rounded-3 border-amber">
+            <div class="position-absolute bg-blue text-white py-2 px-4 rounded-circle">
+              <h1 class="normal-heading-3 m-0">3</h1>
+            </div>
+            <h3 class="text-style-label">Laporan diproses</h3>
+          </div>
+          <div class="col position-relative mx-1 d-flex justify-content-center align-items-center rounded-3 border-amber">
+            <div class="position-absolute bg-blue text-white py-2 px-4 rounded-circle">
+              <h1 class="normal-heading-3 m-0">4</h1>
+            </div>
+            <h3 class="text-style-label">Laporan selesai</h3>
+          </div>
+        </div>
+      </div>
+      <div class="position-relative py-5 mb-5">
+        <div class="-lawan position-absolute z-2 w-100 fw-bold py-2 px-4 text-center rounded">
+          <p class="text-line mb-0">
+            - Lawan! - Lawan! - Lawan! - Lawan! - Lawan! - Lawan! - Lawan! -
+            Lawan! - Lawan! - Lawan! - Lawan! - Lawan! - Lawan! - Lawan! - Lawan!
+            - Lawan! - Lawan! - Lawan! - Lawan! -
+          </p>
+        </div>
+        <div class="lawan position-absolute z-1 w-100 fw-bold py-2 px-4 text-center rounded">
+          <p class="text-line mb-0">
+            - Lawan! - Lawan! - Lawan! - Lawan! - Lawan! - Lawan! - Lawan! -
+            Lawan! - Lawan! - Lawan! - Lawan! - Lawan! - Lawan! - Lawan! - Lawan!
+            - Lawan! - Lawan! - Lawan!
+          </p>
+        </div>
+      </div>
+      <div class="d-flex align-items-center justify-content-center py-5 my-5">
         <div class="">
           <img className="w-75 rounded-start-3 " src="./images/mockup-beranda.png" alt="" />
         </div>

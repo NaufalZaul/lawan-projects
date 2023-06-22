@@ -1,12 +1,10 @@
-import { Link } from 'react-router-dom';
 import { PDFDownloadLink } from '@react-pdf/renderer';
 import { PrintPDF } from './printpdf';
 import DetailLaporan from '../pages/pengelola/sub_pages/detail_laporan';
 
 
 const Button = {
-  ButtonTerima: (data) => {
-    // console.log(data);
+  ButtonTerima: () => {
     return (
       <button type="button"
         class="btn button-success text-style-button"
@@ -20,6 +18,13 @@ const Button = {
     <button type="button"
       class="btn button-danger text-style-button"
       data-bs-toggle="modal" data-bs-target="#exampleModalTolak">
+      <i class="fas fa-times-circle"></i>
+    </button>
+  ),
+  ButtonHapus: () => (
+    <button type="button"
+      class="btn button-danger text-style-button"
+      data-bs-toggle="modal" data-bs-target="#exampleModalHapus">
       <i class="fas fa-times-circle"></i>
     </button>
   ),
@@ -52,7 +57,7 @@ const Button = {
     </button>
   ),
   ButtonDownload: () => (
-    <PDFDownloadLink document={<DetailLaporan />} fileName='Laporan'>
+    <PDFDownloadLink document={<PrintPDF />} fileName='Laporan'>
       <button type="button"
         class="btn button-print text-style-button">
         <i class="fas fa-file-alt"></i>

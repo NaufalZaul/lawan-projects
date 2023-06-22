@@ -22,17 +22,17 @@ export default function SideBar() {
           </Link>
         </li>
         <li className="nav-item my-1">
-          <Link to="/kelola/laporan_masuk" className="nav-link text-blue"
+          <Link to="/kelola/laporan_diterima" className="nav-link text-blue"
             onClick={(e) => handleNavigasi(e.currentTarget)}
-            state={{ defaultUrl: 'masuk' }}>
+            state={{ defaultUrl: 'diterima' }}>
             <i class="fas fa-file-download me-2"></i>
             Laporan Masuk
           </Link>
         </li>
         <li className="nav-item my-1">
-          <Link to="/kelola/laporan_proses" className="nav-link text-blue"
+          <Link to="/kelola/laporan_diproses" className="nav-link text-blue"
             onClick={(e) => handleNavigasi(e.currentTarget)}
-            state={{ defaultUrl: 'proses' }}>
+            state={{ defaultUrl: 'diproses' }}>
             <i class="fas fa-file-signature me-2"></i>
             Laporan Diproses
           </Link>
@@ -46,9 +46,9 @@ export default function SideBar() {
           </Link>
         </li>
         <li className="nav-item my-1">
-          <Link to="/kelola/laporan_tolak" className="nav-link text-blue"
+          <Link to="/kelola/laporan_ditolak" className="nav-link text-blue"
             onClick={(e) => handleNavigasi(e.currentTarget)}
-            state={{ defaultUrl: 'tolak' }}>
+            state={{ defaultUrl: 'ditolak' }}>
             <i class="fas fa-file-prescription me-2"></i>
             Laporan Ditolak
           </Link>

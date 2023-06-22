@@ -30,13 +30,16 @@ import DetailArtikel from './pages/halaman_utama/sub_pages/detail_artikel';
 
 // firebase
 import "./api/firebase"
-// import { updateData } from './api/sistem_data_pengelola';
-// updateData('-NYRRNTtbA5x9FNRygGl', 'mencoba', 'mencoba', 'mencoba', 'mencoba', 'mencoba', 'mencoba', 'mencoba', 'mencoba', 'ahaha')
+import { getPengelola } from './api/sistem_pengelola';
+getPengelola()
+
+
+
+
+
 
 function App() {
   const { state } = useLocation();
-  // console.log(state);
-
   const pathname = window.location.pathname
     .split('')
     .slice(0, 7)
@@ -79,7 +82,8 @@ function App() {
                 />
                 <Route path="/edukasi/detail_artikel"
                   element={<DetailArtikel
-                    artikel={state.artikel} />} />
+                    artikel={state.artikel} />}
+                />
               </>
               : ''
           }

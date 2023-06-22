@@ -1,8 +1,8 @@
-import { updateData } from "../api/sistem_data_pengelola"
+import { hapusDataLaporan, updateDataLaporan } from "../api/sistem_data_pengelola"
 
 
 export const Modal = {
-  ModalTerima: ({ keyData, data }) => (
+  ModalTerima: ({ keyData, data, status }) => (
     <div class="modal fade" id="exampleModalTerima" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
@@ -14,18 +14,15 @@ export const Modal = {
             <div class="d-flex justify-content-between">
               <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tidak</button>
               <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModalBerhasil"
-                onClick={() => updateData(keyData, data)}
+                onClick={() => updateDataLaporan(keyData, data, status)}
               >Konfirmasi</button>
             </div>
           </div>
         </div>
       </div>
     </div>
-  )
-  ,
-
-
-  ModalTolak: () => (
+  ),
+  ModalTolak: ({ keyData, data, statusData }) => (
     <div class="modal fade" id="exampleModalTolak" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
@@ -36,14 +33,16 @@ export const Modal = {
             <p>Yakin ingin menolak laporan?</p>
             <div class="d-flex justify-content-between">
               <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tidak</button>
-              <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModalBerhasil">Konfirmasi</button>
+              <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModalBerhasil"
+                onClick={() => updateDataLaporan(keyData, data, statusData)}
+              >Konfirmasi</button>
             </div>
           </div>
         </div>
       </div>
     </div>
   ),
-  ModalHapus: () => (
+  ModalHapus: ({ keyData }) => (
     <div class="modal fade" id="exampleModalHapus" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
@@ -54,7 +53,9 @@ export const Modal = {
             <p>Yakin ingin Menghapus Laporan?</p>
             <div class="d-flex justify-content-between">
               <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tidak</button>
-              <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModalBerhasil">Ya</button>
+              <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModalBerhasil"
+                onClick={() => hapusDataLaporan(keyData)}
+              >Ya</button>
             </div>
           </div>
         </div>

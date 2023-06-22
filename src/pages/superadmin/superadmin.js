@@ -34,11 +34,12 @@ export function controlTable() {
   }, 2000)
 }
 
-const dataGetPengelola = getPengelola()
 // console.log(dataGetPengelola);
+export default function SuperAdmin() {
+  const dataGetPengelola = getPengelola()
+  console.log(2)
 
-export default function SuperAdmin({ table, page }) {
-
+  // dataGetPengelola.map(e => console.log(e.element))
 
   return (
     <div class="container bg-secondary-subtle pt-2">
@@ -66,34 +67,34 @@ export default function SuperAdmin({ table, page }) {
             </tr>
           </thead>
           <tbody>
+            {
+              dataGetPengelola.map((value, key) => (
+                <tr key={key} className="text-style-paragraf align-middle" id="data-laporan">
 
+                  <td className="text-center">{key + 1}</td>
+                  <td>{value.element.nama}</td>
+                  <td className="text-center">{value.element.alamat}</td>
+                  <td className="text-center d-flex justify-content-evenly">
+                    {/* <Link to="/kelola/detail_laporan"
+                      state={{
+                        detailData: sistemDataPengelola[key], backpage: page
+                      }}>
+                    </Link> */}
+                    <Button.ButtonPrint />
+                    <Button.ButtonTolak />
+                  </td>
+                </tr>
+              ))
+            }
           </tbody>
         </table>
       </div>
 
       <Modal.ModalTerima />
       <Modal.ModalTolak />
-      <Modal.ModalKonfirmasi />
+      <Modal.ModalBerhasil />
 
     </div>
   )
 };
-            // {/* {
-            //   dataGetPengelola.map((value, key) => (
-            //     <tr key={key} className="text-style-paragraf align-middle" id="data-laporan">
 
-            //       <td className="text-center">{key + 1}</td>
-            //       <td>{value.nama}</td>
-            //       <td className="text-center">{value.alamat}</td>
-            //       <td className="text-center d-flex justify-content-evenly">
-            //         {/* <Link to="/kelola/detail_laporan"
-            //           state={{
-            //             detailData: sistemDataPengelola[key], backpage: page
-            //           }}>
-            //         </Link> */}
-            //         <Button.ButtonPrint />
-            //         <Button.ButtonTolak />
-            //       </td>
-            //     </tr>
-            //   ))
-            // } */}

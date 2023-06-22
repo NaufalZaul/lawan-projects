@@ -1,8 +1,11 @@
 import { Link } from 'react-router-dom'
 import StorageImage from '../../../api/storage_firebase'
+import Button from '../../../components/button'
+import { Modal } from '../../../components/modal'
 
 
 const storageImage = StorageImage()
+
 
 export default function DetailLaporan({ detail, backpage }) {
   return (
@@ -16,24 +19,24 @@ export default function DetailLaporan({ detail, backpage }) {
               Kembali
             </button>
           </Link>
-          <h4 className="semi-heading-2">{detail.judul_laporan}</h4>
+          <h4 className="semi-heading-2">{detail.value.element.judul_laporan}</h4>
           <ul className="d-flex justify-content-between my-4 p-0">
             <li className="list-group-item">
               <p className="bold-paragraf mb-1">Jenis Kekerasan</p>
-              <p className="paragraf">{detail.jenis_kekerasan}</p>
+              <p className="paragraf">{detail.value.element.jenis_kekerasan}</p>
             </li>
             <li className="list-group-item">
               <p className="bold-paragraf mb-1">Lokasi Kejadian</p>
-              <p className="paragraf">{detail.lokasi_kejadian}</p>
+              <p className="paragraf">{detail.value.element.lokasi_kejadian}</p>
             </li>
             <li className="list-group-item">
               <p className="bold-paragraf mb-1">Tanggal Kejadian</p>
-              <p className="paragraf">{detail.tanggal_kejadian}</p>
+              <p className="paragraf">{detail.value.element.tanggal_kejadian}</p>
             </li>
           </ul>
           <div class="">
             <p className="bold-paragraf mb-1">Deskripsi</p>
-            <p className="paragraf">{detail.isi_laporan}</p>
+            <p className="paragraf">{detail.value.element.isi_laporan}</p>
           </div>
         </div>
         <div class="row row-cols-4 my-5">
@@ -46,24 +49,24 @@ export default function DetailLaporan({ detail, backpage }) {
           <img src={storageImage[1]} alt="" class="my-2" />
         </div>
 
-        <div class="d-flex justify-content-between">
-          <button type="submit" className="btn button button-danger">
-            Tolak
-            <i class="fas fa-times ms-2"></i>
-          </button>
-          <button type="submit" className="btn button button-print">
-            PDF
-            <i class="fas fa-file-pdf ms-2"></i>
-          </button>
-          <button type="submit" className="btn button button-success">
-            Proses
-            <i class="fas fa-check ms-2"></i>
-          </button>
-        </div>
+        {
+          (detail.value.element.status_laporan == 'diterima') ? (
+            <div class="d-flex justify-content-between">
+              <Button.ButtonTerima />
+              <Button.ButtonDownload />
+              <Button.ButtonTolak />
+            </div>
+
+          ) : (
+            <div class="d-flex justify-content-between">
+              <Button.ButtonDownload />
+            </div>
+          )
+        }
       </div>
       <div class="col-4 bg-blue text-white">
         <div class="text-center my-4">
-          {/* <img className='' src={storageImage[0]} alt="" class="" /> */}
+          <img className='' src={storageImage[2]} alt="" class="" />
         </div>
         <table class="table table-borderless">
           <thead>
@@ -92,6 +95,30 @@ export default function DetailLaporan({ detail, backpage }) {
           </tbody>
         </table>
       </div>
+      <Modal.ModalTerima
+        keyData={detail.value.idData}
+        data={detail.value}
+        status={{ status: "diproses" }} />
+
+      <Modal.ModalTolak keyData={detail.value.idData}
+        data={detail.value}
+        status={{ status: "ditolak" }} />
+
+      <Modal.ModalBerhasil />
     </div>
   )
 };
+
+{/* <button type="submit" className="btn button button-danger">
+            Tolak
+            <i class="fas fa-times ms-2"></i>
+          </button>
+          <button type="submit" className="btn button button-print">
+            PDF
+            <i class="fas fa-file-pdf ms-2"></i>
+          </button>
+          <button type="submit" className="btn button button-success">
+            Proses
+            <i class="fas fa-check ms-2"></i>
+          </button> */}
+{/* </div> */ }

@@ -3,23 +3,30 @@ import { database } from './firebase';
 import { v4 } from 'uuid';
 
 
-const refDBPolsek = ref(database, 'polsek/');
-const refDBAkses = ref(database, 'polsek/akses/');
+// const refDBPolsek = ref(database, 'polsek/');
+// const refDBAkses = ref(database, 'polsek/akses/');
 
 function getPengelola() {
-  const dataArr = []
+  const dataArr = [];
+  const refDB = ref(database, 'polsek/');
 
-  onValue(refDBPolsek, (dt) => {
+  // polseklububaja polseklububaja457212
+
+  onValue(refDB, (dt) => {
     const data = dt.val();
 
     for (const key in data) {
       if (Object.hasOwnProperty.call(data, key)) {
         const element = data[key];
-        dataArr.push(element)
+        const newData = {
+          idData: key,
+          element: element
+        }
+        dataArr.push(newData)
       }
     }
   })
-
+  console.log(1)
   return dataArr;
 }
 

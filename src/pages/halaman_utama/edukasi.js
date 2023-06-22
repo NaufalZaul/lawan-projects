@@ -306,8 +306,10 @@ export default function Edukasi() {
         <h2 class="mb-5 text-center fw-bold">Artikel</h2>
         {
           artikel.map((val, key) => (
-            <Link to="/edukasi/detail_artikel" state={{ artikel: artikel[key] }}>
-              <div class="col-lg-3">
+            <div class="col-lg-3">
+              <Link to="/edukasi/detail_artikel"
+                className="text-decoration-none"
+                state={{ artikel: artikel[key] }}>
                 <div class="card shadow mb-2">
                   <img
                     src={val.image}
@@ -318,74 +320,13 @@ export default function Edukasi() {
                     <p class="card-text">{val.judul}</p>
                   </div>
                 </div>
-              </div>
-            </Link>
+              </Link>
+            </div>
 
           ))
         }
-        {/* <div class="col-lg-3">
-          <div class="card shadow mb-2">
-            <img
-              src="./images/artikel-1.png"
-              class="card-img-top"
-              alt="gambar artikel 1"
-            />
-            <div class="card-body">
-              <p class="card-text">
-                Kekerasan di Lingkungan Sosial: Mengatasi Tantangan untuk
-                Menciptakan Harmoni
-              </p>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-3">
-          <div class="card shadow mb-2">
-            <img
-              src="./images/artikel-2.png"
-              class="card-img-top"
-              alt="gambar artikel 2"
-            />
-            <div class="card-body">
-              <p class="card-text">
-                Dampak dari Kekerasan: Menyadari Konsekuensi dan Mendorong
-                Perubahan
-              </p>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-3">
-          <div class="card shadow mb-2">
-            <img
-              src="./images/artikel-3.png"
-              class="card-img-top"
-              alt="gambar artikel 3"
-            />
-            <div class="card-body">
-              <p class="card-text">
-                Dampak dari Kekerasan: Menghancurkan Kehidupan dan Masyarakat
-              </p>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-3">
-          <div class="card shadow mb-2">
-            <img
-              src="./images/artikel-4.png"
-              class="card-img-top"
-              alt="gambar artikel 4"
-            />
-            <div class="card-body">
-              <p class="card-text">
-                Edukasi Kekerasan: Membangun Kesadaran dan Mengatasi Tindakan
-                Kekerasan
-              </p>
-            </div>
-          </div>
-        </div> */}
-
-
       </div>
-    </div >
+    </div>
   )
 };
 

@@ -56,37 +56,37 @@ export default function Tentang() {
         </div>
       </div>
 
-      <div class="m-auto text-center">
-        <h2 class="semi-heading-2">Alur Pelaporan</h2>
-        <div class="row grooves">
-          <div class="col position-relative mx-1 d-flex justify-content-center align-items-center border rounded-3">
+      <div class="m-auto text-center p-5">
+        <h2 class="semi-heading-2 my-5">Alur Pelaporan</h2>
+        <div class="row grooves px-5 py-3 justifi-content-center">
+          <div class="col position-relative mx-1 d-flex justify-content-center align-items-center rounded-3 border-amber">
             <div class="position-absolute bg-blue text-white py-2 px-4 rounded-circle">
-              <h1 class="bold-heading-1 m-0">1</h1>
+              <h1 class="normal-heading-3 m-0">1</h1>
             </div>
-            <h3 class="normal-heading-3">Buat Laporan</h3>
+            <h3 class="text-style-label">Buat Laporan</h3>
           </div>
-          <div class="col position-relative mx-1 d-flex justify-content-center align-items-center border rounded-3">
+          <div class="col position-relative mx-1 d-flex justify-content-center align-items-center rounded-3 border-amber">
             <div class="position-absolute bg-blue text-white py-2 px-4 rounded-circle">
-              <h1 class="bold-heading-1 m-0">2</h1>
+              <h1 class="normal-heading-3 m-0">2</h1>
             </div>
-            <h3 class="normal-heading-3">Laporan diverifikasi</h3>
+            <h3 class="text-style-label">Laporan diverifikasi</h3>
           </div>
-          <div class="col position-relative mx-1 d-flex justify-content-center align-items-center border rounded-3">
+          <div class="col position-relative mx-1 d-flex justify-content-center align-items-center rounded-3 border-amber">
             <div class="position-absolute bg-blue text-white py-2 px-4 rounded-circle">
-              <h1 class="bold-heading-1 m-0">3</h1>
+              <h1 class="normal-heading-3 m-0">3</h1>
             </div>
-            <h3 class="normal-heading-3">Laporan diproses</h3>
+            <h3 class="text-style-label">Laporan diproses</h3>
           </div>
-          <div class="col position-relative mx-1 d-flex justify-content-center align-items-center border rounded-3">
+          <div class="col position-relative mx-1 d-flex justify-content-center align-items-center rounded-3 border-amber">
             <div class="position-absolute bg-blue text-white py-2 px-4 rounded-circle">
-              <h1 class="bold-heading-1 m-0">4</h1>
+              <h1 class="normal-heading-3 m-0">4</h1>
             </div>
-            <h3 class="normal-heading-3">Laporan selesai</h3>
+            <h3 class="text-style-label">Laporan selesai</h3>
           </div>
         </div>
       </div>
 
 
-    </div >
+    </div>
   )
 };
