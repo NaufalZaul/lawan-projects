@@ -1,43 +1,51 @@
-import { PDFDownloadLink } from '@react-pdf/renderer';
-import PrintPDF from './printpdf';
-import DetailLaporan from '../pages/pengelola/sub_pages/detail_laporan';
-
+import { PDFDownloadLink } from "@react-pdf/renderer";
+import PrintPDF from "./printpdf";
 
 const Button = {
   ButtonTerima: () => {
     return (
-      <button type="button"
+      <button
+        type="button"
         className="btn button-success text-style-button"
         data-bs-toggle="modal"
-        data-bs-target="#exampleModalTerima">
+        data-bs-target="#exampleModalTerima"
+      >
         <i className="fas fa-check"></i>
       </button>
-    )
+    );
   },
   ButtonTolak: () => (
-    <button type="button"
+    <button
+      type="button"
       className="btn button-danger text-style-button"
-      data-bs-toggle="modal" data-bs-target="#exampleModalTolak">
+      data-bs-toggle="modal"
+      data-bs-target="#exampleModalTolak"
+    >
       <i className="fas fa-times-circle"></i>
     </button>
   ),
   ButtonHapus: () => (
-    <button type="button"
+    <button
+      type="button"
       className="btn button-danger text-style-button"
-      data-bs-toggle="modal" data-bs-target="#exampleModalHapus">
+      data-bs-toggle="modal"
+      data-bs-target="#exampleModalHapus"
+    >
       <i className="fas fa-times-circle"></i>
     </button>
   ),
   ButtonDetail: () => (
-    <button type="button"
-      className="btn button-print text-style-button">
+    <button type="button" className="btn button-print text-style-button">
       <i className="fas fa-file-alt"></i>
     </button>
   ),
   ButtonKonfirmasi: () => (
-    <button type="button"
+    <button
+      type="button"
       className="btn button-success text-style-button"
-      data-bs-toggle="modal" data-bs-target="#exampleModalKonfirmasi">
+      data-bs-toggle="modal"
+      data-bs-target="#exampleModalKonfirmasi"
+    >
       <i className="fas fa-check"></i>
     </button>
   ),
@@ -45,7 +53,8 @@ const Button = {
     <button
       type="button"
       onClick={() => alert(data)}
-      className="btn button-print text-style-button">
+      className="btn button-print text-style-button"
+    >
       <i className="fas fa-sort-amount-up me-1 px-1"></i>
       Urutkan
     </button>
@@ -57,40 +66,53 @@ const Button = {
     </button>
   ),
   ButtonSelesai: () => (
-    <button type="button"
+    <button
+      type="button"
       className="btn button-success text-style-button"
-      data-bs-toggle="modal" data-bs-target="#exampleModalSelesai">
+      data-bs-toggle="modal"
+      data-bs-target="#exampleModalSelesai"
+    >
       selesai
       {/* <i className="fas fa-check"></i> */}
     </button>
   ),
   ButtonDownload: ({ data }) => (
-    <PDFDownloadLink document={<PrintPDF data={data} />} fileName='Laporan'>
-      <button type="button"
-        className="btn button-print text-style-button">
+    <PDFDownloadLink document={<PrintPDF data={data} />} fileName="Laporan">
+      <button type="button" className="btn button-print text-style-button">
         <i className="fas fa-file-alt"></i>
       </button>
     </PDFDownloadLink>
   ),
   ButtonTambahAkun: () => (
-    <button type="button" className="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModalTambahAkun">
+    <button
+      type="button"
+      className="btn btn-primary"
+      data-bs-toggle="modal"
+      data-bs-target="#exampleModalTambahAkun"
+    >
       Tambah Pengguna
     </button>
   ),
   ButtonUbahAkun: () => (
-    <button type="button"
+    <button
+      type="button"
       className="btn btn-warning text-style-button"
-      data-bs-toggle="modal" data-bs-target="#exampleModalUbahAkun">
+      data-bs-toggle="modal"
+      data-bs-target="#exampleModalUbahAkun"
+    >
       <i className="fas fa-times-circle"></i>
     </button>
   ),
   ButtonHapusAkun: () => (
-    <button type="button"
+    <button
+      type="button"
       className="btn button-danger text-style-button"
-      data-bs-toggle="modal" data-bs-target="#exampleModalHapusAkun">
+      data-bs-toggle="modal"
+      data-bs-target="#exampleModalHapusAkun"
+    >
       <i className="fas fa-times-circle"></i>
     </button>
   ),
-}
+};
 
 export default Button;

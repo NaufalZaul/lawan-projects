@@ -1,8 +1,5 @@
-import { ref, onValue } from 'https://www.gstatic.com/firebasejs/9.22.1/firebase-database.js'
-import { database } from './firebase';
-import { useState } from 'react';
-import { redirect, useLocation } from 'react-router-dom';
-
+import { ref, onValue } from "https://www.gstatic.com/firebasejs/9.22.1/firebase-database.js";
+import { database } from "./firebase";
 
 // export function SistemLogin() {
 
@@ -45,40 +42,34 @@ import { redirect, useLocation } from 'react-router-dom';
 //   return isLogin;
 // }
 export function sistemLogin(username, password) {
-
   // // polseklububaja polseklububaja457212
-
-
 
   let loginStatus = false;
 
-  onValue(ref(database, 'polsek/'), (dt) => {
+  onValue(ref(database, "polsek/"), (dt) => {
     const data = dt.val();
 
     for (const key in data) {
       if (Object.hasOwnProperty.call(data, key)) {
         const element = data[key];
-        if (element.username != undefined) {
+        if (element.username !== undefined) {
           if (username === element.username && password === element.pass) {
-            console.log('correct account');
-            loginStatus = true
-            return loginStatus
+            console.log("correct account");
+            loginStatus = true;
+            return loginStatus;
           }
         } else {
-          console.log('incorrect account');
+          console.log("incorrect account");
         }
       }
     }
-  })
+  });
   return loginStatus;
 }
-// redirect('kelola')
-// console.log(redirect());
 
 export default function IsLoginStatus() {
   // const [isLogin, setIsLogin] = useState(false)
   // setIsLogin(sistemLogin())
   // console.log(isLogin)
-
   // return isLogin;
-};
+}

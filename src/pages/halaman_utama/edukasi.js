@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import { artikel } from "../../api/api";
 import { Link } from "react-router-dom";
 
@@ -25,10 +24,9 @@ export default function Edukasi() {
       <div className="hstack bg-black flex-column flex-lg-row">
         <img src="./images/bekardo.png" alt="" />
         <p className="text-white ms-lg-5">
-          Tidak ada yang lebih <span className="text-danger">berbahaya</span> dari
-          pada <span className="text-danger">kekerasan</span> yang dilakukan oleh
-          orang-orang yang <span className="text-danger">bermaksud buruk</span> untuk
-          tujuan yang menguntungkan.
+          Tidak ada yang lebih <span className="text-danger">berbahaya</span> dari pada{" "}
+          <span className="text-danger">kekerasan</span> yang dilakukan oleh orang-orang yang{" "}
+          <span className="text-danger">bermaksud buruk</span> untuk tujuan yang menguntungkan.
         </p>
       </div>
       <div className="d-flex justify-content-center flex-column flex-lg-row gap-5 my-5 pt-5 w-75 mx-auto">
@@ -39,9 +37,7 @@ export default function Edukasi() {
           <img width="220" src="./images/bekar4.png" alt="" />
         </div>
         <div>
-          <h1 className="fw-semibold fs-4 text-primary mb-4">
-            Menghindari diri dari kekerasan
-          </h1>
+          <h1 className="fw-semibold fs-4 text-primary mb-4">Menghindari diri dari kekerasan</h1>
           <ul className="border border-2 border-primary rounded-3">
             <li className="py-2 px-3">Mengontrol diri sendiri</li>
           </ul>
@@ -59,16 +55,15 @@ export default function Edukasi() {
       <div className="position-relative py-5 my-5">
         <div className="-lawan position-absolute z-2 w-100 fw-bold py-2 px-4 text-center rounded">
           <p className="text-line mb-0">
-            - Lawan! - Lawan! - Lawan! - Lawan! - Lawan! - Lawan! - Lawan! -
-            Lawan! - Lawan! - Lawan! - Lawan! - Lawan! - Lawan! - Lawan! - Lawan!
-            - Lawan! - Lawan! - Lawan! - Lawan! -
+            - Lawan! - Lawan! - Lawan! - Lawan! - Lawan! - Lawan! - Lawan! - Lawan! - Lawan! -
+            Lawan! - Lawan! - Lawan! - Lawan! - Lawan! - Lawan! - Lawan! - Lawan! - Lawan! - Lawan!
+            -
           </p>
         </div>
         <div className="lawan position-absolute z-1 w-100 fw-bold py-2 px-4 text-center rounded">
           <p className="text-line mb-0">
-            - Lawan! - Lawan! - Lawan! - Lawan! - Lawan! - Lawan! - Lawan! -
-            Lawan! - Lawan! - Lawan! - Lawan! - Lawan! - Lawan! - Lawan! - Lawan!
-            - Lawan! - Lawan! - Lawan!
+            - Lawan! - Lawan! - Lawan! - Lawan! - Lawan! - Lawan! - Lawan! - Lawan! - Lawan! -
+            Lawan! - Lawan! - Lawan! - Lawan! - Lawan! - Lawan! - Lawan! - Lawan! - Lawan!
           </p>
         </div>
       </div>
@@ -78,9 +73,7 @@ export default function Edukasi() {
           <div className="sikitbangda-1">Selamatkan Diri</div>
           <div className="sikitbangda-2 border border-5 rounded-4 border-primary">
             <h5 className="fw-bold">Yang Harus dilakukan !</h5>
-            <p className="mb-0">
-              Terdapat beberapa hal yang harus dilakukan oleh korban kekerasan
-            </p>
+            <p className="mb-0">Terdapat beberapa hal yang harus dilakukan oleh korban kekerasan</p>
           </div>
           <div className="sikitbangda-3">Segera melapor</div>
         </div>
@@ -94,9 +87,7 @@ export default function Edukasi() {
 
       <div className="container-md mx-auto mt-5 pt-5">
         <div className="bg-primary p-2 p-lg-5 rounded-4">
-          <h3 className="text-center text-light mb-lg-5 fs-4">
-            Undang-undang kekerasan
-          </h3>
+          <h3 className="text-center text-light mb-lg-5 fs-4">Undang-undang kekerasan</h3>
 
           <div className="accordion" id="accordionExample">
             <div className="accordion-item">
@@ -107,35 +98,35 @@ export default function Edukasi() {
                   data-bs-toggle="collapse"
                   data-bs-target="#collapseOne"
                   aria-expanded="true"
-                  aria-controls="collapseOne" >
+                  aria-controls="collapseOne"
+                >
                   Pasal 170 KUHP
                 </button>
               </h2>
               <div
                 id="collapseOne"
                 className="accordion-collapse collapse show"
-                data-bs-parent="#accordionExample">
+                data-bs-parent="#accordionExample"
+              >
                 <div className="accordion-body">
                   <ol>
                     <li>
-                      Barang siapa dengan terang-terangan dan dengan tenaga
-                      bersama menggunakan kekerasan terhadap orang atau barang,
-                      diancam dengan pidana penjara paling lama lima tahun enam
-                      bulan.
+                      Barang siapa dengan terang-terangan dan dengan tenaga bersama menggunakan
+                      kekerasan terhadap orang atau barang, diancam dengan pidana penjara paling
+                      lama lima tahun enam bulan.
                     </li>
                     <li>
                       Yang bersalah diancam:
                       <ol>
                         <li>
-                          Dengan pidana penjara paling lama tujuh tahun, jika ia
-                          dengan sengaja menghancurkan barang atau jika kekerasan
-                          yang digunakan mengakibatkan luka-luka;
+                          Dengan pidana penjara paling lama tujuh tahun, jika ia dengan sengaja
+                          menghancurkan barang atau jika kekerasan yang digunakan mengakibatkan
+                          luka-luka;
                         </li>
                         <li>
-                          Dengan pidana penjara paling lama sembilan tahun, jika
-                          kekerasan mengakibatkan luka berat; 3. dengan pidana
-                          penjara paling lama dua belas tahun, jika kekerasan
-                          mengakibatkan maut.
+                          Dengan pidana penjara paling lama sembilan tahun, jika kekerasan
+                          mengakibatkan luka berat; 3. dengan pidana penjara paling lama dua belas
+                          tahun, jika kekerasan mengakibatkan maut.
                         </li>
                       </ol>
                     </li>
@@ -162,15 +153,13 @@ export default function Edukasi() {
                 data-bs-parent="#accordionExample"
               >
                 <div className="accordion-body">
-                  <strong>This is the second item's accordion body.</strong> It is
-                  hidden by default, until the collapse plugin adds the
-                  appropriate classes that we use to style each element. These
-                  classes control the overall appearance, as well as the showing
-                  and hiding via CSS transitions. You can modify any of this with
-                  custom CSS or overriding our default variables. It's also worth
-                  noting that just about any HTML can go within the
-                  <code>.accordion-body</code>, though the transition does limit
-                  overflow.
+                  <strong>This is the second item's accordion body.</strong> It is hidden by
+                  default, until the collapse plugin adds the appropriate classes that we use to
+                  style each element. These classes control the overall appearance, as well as the
+                  showing and hiding via CSS transitions. You can modify any of this with custom CSS
+                  or overriding our default variables. It's also worth noting that just about any
+                  HTML can go within the
+                  <code>.accordion-body</code>, though the transition does limit overflow.
                 </div>
               </div>
             </div>
@@ -193,15 +182,13 @@ export default function Edukasi() {
                 data-bs-parent="#accordionExample"
               >
                 <div className="accordion-body">
-                  <strong>This is the third item's accordion body.</strong> It is
-                  hidden by default, until the collapse plugin adds the
-                  appropriate classes that we use to style each element. These
-                  classes control the overall appearance, as well as the showing
-                  and hiding via CSS transitions. You can modify any of this with
-                  custom CSS or overriding our default variables. It's also worth
-                  noting that just about any HTML can go within the
-                  <code>.accordion-body</code>, though the transition does limit
-                  overflow.
+                  <strong>This is the third item's accordion body.</strong> It is hidden by default,
+                  until the collapse plugin adds the appropriate classes that we use to style each
+                  element. These classes control the overall appearance, as well as the showing and
+                  hiding via CSS transitions. You can modify any of this with custom CSS or
+                  overriding our default variables. It's also worth noting that just about any HTML
+                  can go within the
+                  <code>.accordion-body</code>, though the transition does limit overflow.
                 </div>
               </div>
             </div>
@@ -224,15 +211,13 @@ export default function Edukasi() {
                 data-bs-parent="#accordionExample"
               >
                 <div className="accordion-body">
-                  <strong>This is the third item's accordion body.</strong> It is
-                  hidden by default, until the collapse plugin adds the
-                  appropriate classes that we use to style each element. These
-                  classes control the overall appearance, as well as the showing
-                  and hiding via CSS transitions. You can modify any of this with
-                  custom CSS or overriding our default variables. It's also worth
-                  noting that just about any HTML can go within the
-                  <code>.accordion-body</code>, though the transition does limit
-                  overflow.
+                  <strong>This is the third item's accordion body.</strong> It is hidden by default,
+                  until the collapse plugin adds the appropriate classes that we use to style each
+                  element. These classes control the overall appearance, as well as the showing and
+                  hiding via CSS transitions. You can modify any of this with custom CSS or
+                  overriding our default variables. It's also worth noting that just about any HTML
+                  can go within the
+                  <code>.accordion-body</code>, though the transition does limit overflow.
                 </div>
               </div>
             </div>
@@ -255,15 +240,13 @@ export default function Edukasi() {
                 data-bs-parent="#accordionExample"
               >
                 <div className="accordion-body">
-                  <strong>This is the third item's accordion body.</strong> It is
-                  hidden by default, until the collapse plugin adds the
-                  appropriate classes that we use to style each element. These
-                  classes control the overall appearance, as well as the showing
-                  and hiding via CSS transitions. You can modify any of this with
-                  custom CSS or overriding our default variables. It's also worth
-                  noting that just about any HTML can go within the
-                  <code>.accordion-body</code>, though the transition does limit
-                  overflow.
+                  <strong>This is the third item's accordion body.</strong> It is hidden by default,
+                  until the collapse plugin adds the appropriate classes that we use to style each
+                  element. These classes control the overall appearance, as well as the showing and
+                  hiding via CSS transitions. You can modify any of this with custom CSS or
+                  overriding our default variables. It's also worth noting that just about any HTML
+                  can go within the
+                  <code>.accordion-body</code>, though the transition does limit overflow.
                 </div>
               </div>
             </div>
@@ -286,15 +269,13 @@ export default function Edukasi() {
                 data-bs-parent="#accordionExample"
               >
                 <div className="accordion-body">
-                  <strong>This is the third item's accordion body.</strong> It is
-                  hidden by default, until the collapse plugin adds the
-                  appropriate classes that we use to style each element. These
-                  classes control the overall appearance, as well as the showing
-                  and hiding via CSS transitions. You can modify any of this with
-                  custom CSS or overriding our default variables. It's also worth
-                  noting that just about any HTML can go within the
-                  <code>.accordion-body</code>, though the transition does limit
-                  overflow.
+                  <strong>This is the third item's accordion body.</strong> It is hidden by default,
+                  until the collapse plugin adds the appropriate classes that we use to style each
+                  element. These classes control the overall appearance, as well as the showing and
+                  hiding via CSS transitions. You can modify any of this with custom CSS or
+                  overriding our default variables. It's also worth noting that just about any HTML
+                  can go within the
+                  <code>.accordion-body</code>, though the transition does limit overflow.
                 </div>
               </div>
             </div>
@@ -304,29 +285,23 @@ export default function Edukasi() {
 
       <div className="row my-5 py-5 mx-0">
         <h2 className="mb-5 text-center fw-bold">Artikel</h2>
-        {
-          artikel.map((val, key) => (
-            <div className="col-lg-3">
-              <Link to="/edukasi/detail_artikel"
-                className="text-decoration-none"
-                state={{ artikel: artikel[key] }}>
-                <div className="card shadow mb-2">
-                  <img
-                    src={val.image}
-                    className="card-img-top"
-                    alt="gambar artikel 1"
-                  />
-                  <div className="card-body">
-                    <p className="card-text">{val.judul}</p>
-                  </div>
+        {artikel.map((val, key) => (
+          <div className="col-lg-3">
+            <Link
+              to="/edukasi/detail_artikel"
+              className="text-decoration-none"
+              state={{ artikel: artikel[key] }}
+            >
+              <div className="card shadow mb-2">
+                <img src={val.image} className="card-img-top" alt="gambar artikel 1" />
+                <div className="card-body">
+                  <p className="card-text">{val.judul}</p>
                 </div>
-              </Link>
-            </div>
-
-          ))
-        }
+              </div>
+            </Link>
+          </div>
+        ))}
       </div>
     </div>
-  )
-};
-
+  );
+}

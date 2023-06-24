@@ -1,5 +1,3 @@
-import { Link } from "react-router-dom";
-
 export default function Footer() {
   return (
     <div className="row bg-blue text-white mt-5 p-5">
@@ -12,16 +10,24 @@ export default function Footer() {
       <div className="col-3 ps-5">
         <ul className="navbar-nav me-auto mb-2 mb-lg-0">
           <li className="nav-item">
-            <a className="nav-link text-style-navbar" href="#">Tentang</a>
+            <a className="nav-link text-style-navbar" href="/">
+              Tentang
+            </a>
           </li>
           <li className="nav-item">
-            <a className="nav-link text-style-navbar" href="#">Edukasi</a>
+            <a className="nav-link text-style-navbar" href="/">
+              Edukasi
+            </a>
           </li>
           <li className="nav-item">
-            <a className="nav-link text-style-navbar" href="#">Kontak</a>
+            <a className="nav-link text-style-navbar" href="/">
+              Kontak
+            </a>
           </li>
           <li className="nav-item">
-            <a className="nav-link text-style-navbar" href="#">Pengelola</a>
+            <a className="nav-link text-style-navbar" href="/">
+              Pengelola
+            </a>
           </li>
         </ul>
       </div>
@@ -29,10 +35,30 @@ export default function Footer() {
         <div className="me-5">
           <h5 className="text-style-navbar">Kunjungi</h5>
           <div className="d-flex">
-            <img width="48" height="48" src="https://img.icons8.com/fluency/48/instagram-new.png" alt="instagram-new" />
-            <img width="48" height="48" src="https://img.icons8.com/color/48/facebook.png" alt="facebook" />
-            <img width="48" height="48" src="https://img.icons8.com/color/48/twitter-squared.png" alt="twitter-squared" />
-            <img width="48" height="48" src="https://img.icons8.com/color/48/youtube-play.png" alt="youtube-play" />
+            <img
+              width="48"
+              height="48"
+              src="https://img.icons8.com/fluency/48/instagram-new.png"
+              alt="instagram-new"
+            />
+            <img
+              width="48"
+              height="48"
+              src="https://img.icons8.com/color/48/facebook.png"
+              alt="facebook"
+            />
+            <img
+              width="48"
+              height="48"
+              src="https://img.icons8.com/color/48/twitter-squared.png"
+              alt="twitter-squared"
+            />
+            <img
+              width="48"
+              height="48"
+              src="https://img.icons8.com/color/48/youtube-play.png"
+              alt="youtube-play"
+            />
           </div>
         </div>
         <div className="">
@@ -41,5 +67,5 @@ export default function Footer() {
         </div>
       </div>
     </div>
-  )
-};
+  );
+}

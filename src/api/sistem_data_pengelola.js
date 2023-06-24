@@ -1,9 +1,13 @@
-import { ref, onValue, set, get, child, remove } from 'https://www.gstatic.com/firebasejs/9.22.1/firebase-database.js'
-import { database } from './firebase';
+import {
+  ref,
+  onValue,
+  set,
+  child,
+} from "https://www.gstatic.com/firebasejs/9.22.1/firebase-database.js";
+import { database } from "./firebase";
 
 export function updateDataLaporan(dataId, dataPengelola, status) {
-
-  set(child(ref(database), 'laporan/' + dataId), {
+  set(child(ref(database), "laporan/" + dataId), {
     id_pelapor: dataPengelola.id_pelapor,
     id_polsek: dataPengelola.id_polsek,
     isi_laporan: dataPengelola.isi_laporan,
@@ -13,17 +17,16 @@ export function updateDataLaporan(dataId, dataPengelola, status) {
     status_laporan: status.status,
     tanggal_kejadian: dataPengelola.tanggal_kejadian,
     unggah_bukti: dataPengelola.unggah_bukti,
-  }).then((e) => console.log('success'))
-
+  }).then((e) => console.log("success"));
 }
 
 export function hapusDataLaporan(dataId) {
-  set(child(ref(database), 'laporan/' + dataId), {})
+  set(child(ref(database), "laporan/" + dataId), {});
 }
 
 export default function SistemDataPengelola() {
   const dataArr = [];
-  const refDB = ref(database, 'laporan/');
+  const refDB = ref(database, "laporan/");
 
   // polseklububaja polseklububaja457212
 
@@ -35,11 +38,11 @@ export default function SistemDataPengelola() {
         const element = data[key];
         const newData = {
           idData: key,
-          element: element
-        }
-        dataArr.push(newData)
+          element: element,
+        };
+        dataArr.push(newData);
       }
     }
-  })
+  });
   return dataArr;
-};
+}

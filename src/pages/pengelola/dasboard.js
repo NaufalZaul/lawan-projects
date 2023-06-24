@@ -1,17 +1,16 @@
-import React, { useEffect } from 'react';
-import chart from '../../components/chart';
-import { polsek } from '../../api/api'
+import React from "react";
+import chart from "../../components/chart";
+import { polsek } from "../../api/api";
 
 class Dasboard extends React.Component {
-  constructor() {
-    super()
+  constructor(props) {
+    super();
   }
-  componentDidMount() {
-  }
+  componentDidMount() {}
 
   componentWillUnmount() {
-    if (window.location.pathname === '/kelola') {
-      chart()
+    if (window.location.pathname === "/kelola") {
+      chart();
     }
   }
 
@@ -51,21 +50,21 @@ class Dasboard extends React.Component {
           <h5 className="text-style-navbar">Statistik Laporan</h5>
           <div className="w-100 d-flex justify-content-between mt-4">
             <p className="bold-paragraf">Data Laporan Tahun 2022</p>
-            <div className='d-flex'>
-              <p className='d-flex align-items-center text-style-paragraf mx-3'>
-                <span className='label-statistik-masuk'></span>
+            <div className="d-flex">
+              <p className="d-flex align-items-center text-style-paragraf mx-3">
+                <span className="label-statistik-masuk"></span>
                 Laporan Masuk
               </p>
-              <p className='d-flex align-items-center text-style-paragraf mx-3'>
-                <span className='label-statistik-selesai'></span>
+              <p className="d-flex align-items-center text-style-paragraf mx-3">
+                <span className="label-statistik-selesai"></span>
                 Laporan Selesai
               </p>
             </div>
           </div>
-          <canvas id='myChart' className='mt-2'></canvas>
+          <canvas id="myChart" className="mt-2"></canvas>
         </div>
       </div>
-    )
+    );
   }
 }
 export default Dasboard;

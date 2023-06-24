@@ -1,6 +1,4 @@
-import { Link } from "react-router-dom"
-
-
+import { Link } from "react-router-dom";
 
 export default function Beranda() {
   return (
@@ -8,16 +6,25 @@ export default function Beranda() {
       <div className="position-relative row align-items-end w-100 m-auto mb-5 header">
         <div className="position-absolute w-50 top-0 start-0 end-0 m-auto mt-5 text-center">
           <h1 className="semi-heading-1">Lawan!</h1>
-          <h2 className="normal-heading-2 m-4">Membantu membela kesejahteraan korban tindak <span className="text-danger">kekerasan</span> dengan melaporkan</h2>
+          <h2 className="normal-heading-2 m-4">
+            Membantu membela kesejahteraan korban tindak{" "}
+            <span className="text-danger">kekerasan</span> dengan melaporkan
+          </h2>
           <a href="#label">
-            <button type="submit" className="btn text-style-button button-amber">Jelajahi</button>
+            <button type="submit" className="btn text-style-button button-amber">
+              Jelajahi
+            </button>
           </a>
         </div>
 
         <div className="col-4 d-flex flex-row-reverse align-items-end">
           <span className="rounded-3 bg-secondary dump-box-height horizontal-blue "></span>
           <div className="d-flex flex-column-reverse align-items-end p-0">
-            <img className="rounded-3 dump-image-height me-4" src="./images/unsplash_NPmR0RblyhQ.jpg" alt="" />
+            <img
+              className="rounded-3 dump-image-height me-4"
+              src="./images/unsplash_NPmR0RblyhQ.jpg"
+              alt=""
+            />
             <span className="rounded-3 bg-secondary mb-4 dump-box-width vertical-amber me-4"></span>
           </div>
         </div>
@@ -34,7 +41,10 @@ export default function Beranda() {
       </div>
 
       <div className="p-5 text-center text-white rounded-4 bg-blue" id="label">
-        <p className="mb-3 text-style-navbar objective">Didedikasikan untuk masyarakat Kota Batam yang berperang dalam kesejahteraan fisik dan psikis</p>
+        <p className="mb-3 text-style-navbar objective">
+          Didedikasikan untuk masyarakat Kota Batam yang berperang dalam kesejahteraan fisik dan
+          psikis
+        </p>
         <span className="text-style-label">Tertanda Lawan!</span>
       </div>
 
@@ -43,9 +53,15 @@ export default function Beranda() {
           <img className="rounded-3 support-image-one" src="./images/image-41.jpg" alt="" />
         </div>
         <div className="col-6 px-5">
-          <p className="normal-heading-3">Tidak ada yang lebih <span className="text-danger"> berbahaya </span> daripada <span className="text-danger">kekerasan</span> yang dilakukan oleh orang-orang yang <span className="text-danger"> bermaksud buruk</span> untuk tujuan yang menguntungkan</p>
+          <p className="normal-heading-3">
+            Tidak ada yang lebih <span className="text-danger"> berbahaya </span> daripada{" "}
+            <span className="text-danger">kekerasan</span> yang dilakukan oleh orang-orang yang{" "}
+            <span className="text-danger"> bermaksud buruk</span> untuk tujuan yang menguntungkan
+          </p>
           <Link to="/edukasi">
-            <button type="submit" className="btn text-style-button button-amber">Pelajari Selengkapnya</button>
+            <button type="submit" className="btn text-style-button button-amber">
+              Pelajari Selengkapnya
+            </button>
           </Link>
         </div>
         <div className="col-4">
@@ -59,21 +75,27 @@ export default function Beranda() {
             <img className="w-25 rounded-3" src="./images/kesejahteraan.png" alt="" />
           </div>
           <h5 className="text-uppercase text-style-label">Kesejahteraan</h5>
-          <p className="text-style-paragraf mb-4">Membantu membela kesejahteraan  korban tindakan kekerasan dengan membantu melaporkan.</p>
+          <p className="text-style-paragraf mb-4">
+            Membantu membela kesejahteraan korban tindakan kekerasan dengan membantu melaporkan.
+          </p>
         </div>
         <div className="col-3 h-100 mx-3 p-3 rounded-3 text-center border-amber">
           <div className="my-4">
             <img className="w-25 rounded-3" src="./images/perlindungan.png" alt="" />
           </div>
           <h5 className="text-uppercase text-style-label">Perlindungan</h5>
-          <p className="text-style-paragraf mb-4">Membantu memberi perlindungan dari pihak kepolisian, lembaga sosial, atau pihak lainnya.</p>
+          <p className="text-style-paragraf mb-4">
+            Membantu memberi perlindungan dari pihak kepolisian, lembaga sosial, atau pihak lainnya.
+          </p>
         </div>
         <div className="col-3 mt-5 mx-3 p-3 rounded-3 text-center border-amber">
           <div className="my-4">
             <img className="w-25 rounded-3" src="./images/kesehatan.png" alt="" />
           </div>
           <h5 className="text-uppercase text-style-label">Kesehatan</h5>
-          <p className="text-style-paragraf mb-4">Membantu memberi layanan kesehatan meliputi pemeriksaan, tindakan, dan perawatan medis.</p>
+          <p className="text-style-paragraf mb-4">
+            Membantu memberi layanan kesehatan meliputi pemeriksaan, tindakan, dan perawatan medis.
+          </p>
         </div>
       </div>
       <div className="row align-items-center w-100 m-auto my-5 rounded-3 quotes bg-blue">
@@ -81,9 +103,13 @@ export default function Beranda() {
           <img className="w-100 rounded-start-3 " src="./images/unsplash_DRzYMtae-vA.png" alt="" />
         </div>
         <div className="col-6 text-white px-5">
-          <h5 className="me-5 normal-heading-3">" Kekerasan bagaikan rumput liar yang tidak akan mati dimusim kemarau "</h5>
+          <h5 className="me-5 normal-heading-3">
+            " Kekerasan bagaikan rumput liar yang tidak akan mati dimusim kemarau "
+          </h5>
           <Link to="/tentang">
-            <button type="submit" className="btn text-style-button button-amber mt-3">Laporan Sekarang</button>
+            <button type="submit" className="btn text-style-button button-amber mt-3">
+              Laporan Sekarang
+            </button>
           </Link>
         </div>
       </div>
@@ -119,16 +145,15 @@ export default function Beranda() {
       <div className="position-relative py-5 mb-5">
         <div className="-lawan position-absolute z-2 w-100 fw-bold py-2 px-4 text-center rounded">
           <p className="text-line mb-0">
-            - Lawan! - Lawan! - Lawan! - Lawan! - Lawan! - Lawan! - Lawan! -
-            Lawan! - Lawan! - Lawan! - Lawan! - Lawan! - Lawan! - Lawan! - Lawan!
-            - Lawan! - Lawan! - Lawan! - Lawan! -
+            - Lawan! - Lawan! - Lawan! - Lawan! - Lawan! - Lawan! - Lawan! - Lawan! - Lawan! -
+            Lawan! - Lawan! - Lawan! - Lawan! - Lawan! - Lawan! - Lawan! - Lawan! - Lawan! - Lawan!
+            -
           </p>
         </div>
         <div className="lawan position-absolute z-1 w-100 fw-bold py-2 px-4 text-center rounded">
           <p className="text-line mb-0">
-            - Lawan! - Lawan! - Lawan! - Lawan! - Lawan! - Lawan! - Lawan! -
-            Lawan! - Lawan! - Lawan! - Lawan! - Lawan! - Lawan! - Lawan! - Lawan!
-            - Lawan! - Lawan! - Lawan!
+            - Lawan! - Lawan! - Lawan! - Lawan! - Lawan! - Lawan! - Lawan! - Lawan! - Lawan! -
+            Lawan! - Lawan! - Lawan! - Lawan! - Lawan! - Lawan! - Lawan! - Lawan! - Lawan!
           </p>
         </div>
       </div>
@@ -143,6 +168,5 @@ export default function Beranda() {
         </div>
       </div>
     </div>
-  )
-};
-
+  );
+}

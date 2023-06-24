@@ -1,29 +1,25 @@
-import { ref, onValue, set, get, child, push } from 'https://www.gstatic.com/firebasejs/9.22.1/firebase-database.js'
-import { database } from './firebase';
-import { v4 } from 'uuid';
-import { useState } from 'react';
-
+import { ref, get, child } from "https://www.gstatic.com/firebasejs/9.22.1/firebase-database.js";
+import { database } from "./firebase";
 
 // const refDBPolsek = ref(database, 'polsek/');
 // const refDBAkses = ref(database, 'polsek/akses/');
 
 function GetPengelola() {
   // const [isDataPengelola, setIsDataPengelola] = useState(['haloo']);
-  const refDB = ref(database);
-  const dataArr = []
+  // const refDB = ref(database);
+  const dataArr = [];
   // polseklububaja polseklububaja457212
 
-  get(child(ref(database), 'polsek/'))
-    .then(data => {
-      const dataPengelola = data.val()
+  get(child(ref(database), "polsek/")).then((data) => {
+    const dataPengelola = data.val();
 
-      for (const key in dataPengelola) {
-        if (Object.hasOwnProperty.call(dataPengelola, key)) {
-          const element = dataPengelola[key];
-          dataArr.push(element)
-        }
+    for (const key in dataPengelola) {
+      if (Object.hasOwnProperty.call(dataPengelola, key)) {
+        const element = dataPengelola[key];
+        dataArr.push(element);
       }
-    })
+    }
+  });
 
   // console.log(dataArr);
   return dataArr;
@@ -49,10 +45,6 @@ function GetPengelola() {
   // return dataArr;
 }
 
-
-
-
-
 function addPengelola(username, pass) {
   // set(refDBAkses, + v4()), {
   //   username: username, //nama polsek
@@ -60,8 +52,8 @@ function addPengelola(username, pass) {
   // }
 }
 
-function updateUsernamePengelola(dataOld, newUsername) {
-  console.log(dataOld);
-}
+// function updateUsernamePengelola(dataOld, newUsername) {
+//   console.log(dataOld);
+// }
 
 export { GetPengelola, addPengelola };

@@ -1,9 +1,7 @@
-import React, { createContext, useContext, useEffect, useState } from 'react';
-import '../../styles/login.css';
-import { sistemLogin } from '../../api/sistem_login';
-import { Link, Navigate, Route, redirect, useLocation } from 'react-router-dom';
-
-
+// import { createContext } from "react";
+import "../../styles/login.css";
+// import { sistemLogin } from '../../api/sistem_login';
+// import { Navigate, Route, useLocation } from "react-router-dom";
 
 const fakeAuth = {
   isAunthenticated: false,
@@ -13,101 +11,99 @@ const fakeAuth = {
   },
   signout(cb) {
     fakeAuth.isAunthenticated = false;
-    setTimeout(cb, 100) //fake async
-  }
-}
+    setTimeout(cb, 100); //fake async
+  },
+};
 
-const authContext = createContext();
+// const authContext = createContext();
 
-function useProvideAuth() {
-  const [user, setUser] = useState(null);
+// function useProvideAuth() {
+//   const [user, setUser] = useState(null);
 
-  const signing = cb => {
-    return fakeAuth.signing(() => {
-      setUser("user");
-      cb();
-    })
-  }
+//   const signing = (cb) => {
+//     return fakeAuth.signing(() => {
+//       setUser("user");
+//       cb();
+//     });
+//   };
 
-  const signout = cb => {
-    return fakeAuth.signout(() => {
-      setUser(null);
-      cb();
-    })
-  }
+//   const signout = (cb) => {
+//     return fakeAuth.signout(() => {
+//       setUser(null);
+//       cb();
+//     });
+//   };
 
-  return (user, signing, signout)
-}
+//   return { user, signing, signout };
+// }
 
-function ProvideAuth({ children }) {
-  const auth = useProvideAuth();
-  return (
-    <authContext.Provider value={auth}>
-      {children}
-    </authContext.Provider>
-  )
-}
+// function ProvideAuth({ children }) {
+//   const auth = useProvideAuth();
+//   return <authContext.Provider value={auth}>{children}</authContext.Provider>;
+// }
 
-function useAuth() {
-  return useContext(authContext);
-}
+// function useAuth() {
+//   return useContext(authContext);
+// }
 
-function AuthButton() {
-  let auth = useAuth()
-  return auth.user ? (
-    <p>Welcome!
-      <button onClick={() => {
-        auth.signout(() => window.location.href = window.location.origin)
-      }} type="submit">Logout</button>
-    </p>
-  ) : (
-    <p>not login</p>
-  )
-}
+// function AuthButton() {
+//   let auth = useAuth();
+//   return auth.user ? (
+//     <p>
+//       Welcome!
+//       <button
+//         onClick={() => {
+//           auth.signout(() => (window.location.href = window.location.origin));
+//         }}
+//         type="submit"
+//       >
+//         Logout
+//       </button>
+//     </p>
+//   ) : (
+//     <p>not login</p>
+//   );
+// }
 
-function PrivateRoute({ children, ...rest }) {
-  let auth = useAuth();
-  return (
-    <Route
-      {...rest}
-      render={({ location }) =>
-        auth.user ? (
-          children
-        ) : (
-          <Navigate
-            to={{
-              pathname: '/login',
-              state: { from: location }
-            }}
-          />
-        )
-      }
-    />
-  )
-}
+// function PrivateRoute({ children, ...rest }) {
+//   let auth = useAuth();
+//   return (
+//     <Route
+//       {...rest}
+//       render={({ location }) =>
+//         auth.user ? (
+//           children
+//         ) : (
+//           <Navigate
+//             to={{
+//               pathname: "/login",
+//               state: { from: location },
+//             }}
+//           />
+//         )
+//       }
+//     />
+//   );
+// }
 
+// function LoginPage() {
+//   let location = useLocation();
+//   let auth = useAuth();
 
-function LoginPage() {
-  let location = useLocation();
-  let auth = useAuth()
+//   let { from } = location.state || { from: { pathname: "/" } };
+//   let login = () => {
+//     auth.signin(() => {
+//       // history.replace(from);
+//     });
+//   };
 
-  let { from } = location.state || { from: { pathname: "/" } };
-  let login = () => {
-    auth.signin(() => {
-      // history.replace(from);
-    });
-  };
-
-  return (
-    <div>
-      <p>You must log in to view the page at {from.pathname}</p>
-      <button onClick={login}>Log in</button>
-    </div>
-  );
-}
-
-
-
+//   return (
+//     <div>
+//       <p>You must log in to view the page at {from.pathname}</p>
+//       <button onClick={login}>Log in</button>
+//     </div>
+//   );
+// }
 
 // function controlForm() {
 //   const inputs = document.querySelectorAll(".input");
@@ -128,17 +124,13 @@ function LoginPage() {
 //   });
 // }
 
-
 export default function Login({ statusLogin }) {
   //   const [isUsername, setIsUsername] = useState('s')
   //   const [isPass, setIsPass] = useState('s')
   //   const [isLogin, setIsLogin] = useState(statusLogin)
-
   //   useEffect(() => {
   //     controlForm()
   //   })
-
-
   //   return (
   //     <div className="container-login">
   //       <div className="img">
