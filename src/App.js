@@ -27,6 +27,10 @@ import Edukasi from "./pages/halaman_utama/edukasi";
 import Kontak from "./pages/halaman_utama/kontak";
 // import SuperAdmin from './pages/superadmin/superadmin';
 import DetailArtikel from "./pages/halaman_utama/sub_pages/detail_artikel";
+
+// Authentication private routing
+import PrivateRoute from "./components/PrivateRoutes";
+
 // firebase
 import "./api/firebase";
 import SuperAdmin from "./pages/superadmin/SuperAdmin";
@@ -61,25 +65,24 @@ function App() {
           {/* sisi pengelola */}
           <Route path="/login" element={<Login />} />
 
-          <Route path="/kelola" element={<Dasboard />} />
-          {state !== null ? (
-            <>
-              <Route
-                path={`/kelola/laporan_${state.defaultUrl}`}
-                element={<Laporan table={`${state.defaultUrl}`} page={`${state.defaultUrl}`} />}
-              />
-              <Route
-                path="/kelola/detail_laporan"
-                element={<DetailLaporan detail={state.detailData} backpage={state.backpage} />}
-              />
-              <Route
-                path="/edukasi/detail_artikel"
-                element={<DetailArtikel artikel={state.artikel} />}
-              />
-            </>
-          ) : (
-            ""
-          )}
+          <Route path="/kelola" element={<PrivateRoute state={state} />}>
+            <Route index element={<Dasboard />} caseSensitive />
+            <Route path="laporan-diterima" element={<Laporan />} caseSensitive />
+            <Route path="laporan-diproses" element={<Laporan />} caseSensitive />
+            <Route path="laporan-ditolak" element={<Laporan />} caseSensitive />
+            <Route path="laporan-selesai" element={<Laporan />} caseSensitive />
+            <Route path="detail_laporan" element={<DetailLaporan />} caseSensitive />
+            <Route path="edukasi/detail_artikel" element={<DetailArtikel />} caseSensitive />
+          </Route>
+          <Route
+            path="*"
+            element={
+              <h2 style={{ textAlign: "center", margin: "auto", display: "flex" }}>
+                404 Page Not Found
+              </h2>
+            }
+            caseSensitive
+          />
         </Routes>
       </div>
       {pathname === "/kelola" || pathname === "/login" ? "" : <Footer />}

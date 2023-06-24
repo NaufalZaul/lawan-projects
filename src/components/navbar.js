@@ -20,11 +20,7 @@ export function NavbarPengelola() {
         </button>
         <ul className="dropdown-menu">
           <Link to="/" className="text-decoration-none">
-            <li>
-              <a className="dropdown-item" href="/">
-                Keluar
-              </a>
-            </li>
+            <span className="dropdown-item">Keluar</span>
           </Link>
         </ul>
       </div>
