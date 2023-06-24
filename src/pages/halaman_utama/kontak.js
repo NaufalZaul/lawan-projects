@@ -15,50 +15,50 @@ export default function Kontak() {
   // }, [])
 
   return (
-    <div class="">
-      <div class="container mx-auto py-5 w-50">
-        <h2 class="text-center normal-heading-2">
+    <div className="">
+      <div className="container mx-auto py-5 w-50">
+        <h2 className="text-center normal-heading-2">
           Dapatkan informasi lainnya di sosial media kami, dan anda dapat
           menghubungi pihak berwajib yang tertera di bawah ini
         </h2>
       </div>
-      <div class="container mx-auto py-5">
-        <h2 class="text-center semi-heading-2">Kunjungi Kami di</h2>
-        <div class="d-flex flex-wrap justify-content-center gap-5 mt-4">
-          <div class="text-center">
+      <div className="container mx-auto py-5">
+        <h2 className="text-center semi-heading-2">Kunjungi Kami di</h2>
+        <div className="d-flex flex-wrap justify-content-center gap-5 mt-4">
+          <div className="text-center">
             <img width="80" height="80" src="https://img.icons8.com/fluency/96/instagram-new.png" alt="instagram-new" />
-            <p class="text-style-paragraf">@lawan.id.batam</p>
+            <p className="text-style-paragraf">@lawan.id.batam</p>
           </div>
-          <div class="text-center">
+          <div className="text-center">
             <img width="80" height="80" src="https://img.icons8.com/color/96/facebook.png" alt="facebook" />
-            <p class="text-style-paragraf">Lawan id Batam</p>
+            <p className="text-style-paragraf">Lawan id Batam</p>
           </div>
-          <div class="text-center">
+          <div className="text-center">
             <img width="80" height="80" src="https://img.icons8.com/color/96/twitter-squared.png" alt="twitter-squared" />
-            <p class="text-style-paragraf">Lawan id Batam</p>
+            <p className="text-style-paragraf">Lawan id Batam</p>
           </div>
-          <div class="text-center">
+          <div className="text-center">
             <img width="80" height="80" src="https://img.icons8.com/color/96/youtube-play.png" alt="youtube-play" />
-            <p class="text-style-paragraf">Lawan id Batam</p>
+            <p className="text-style-paragraf">Lawan id Batam</p>
           </div>
 
         </div>
       </div>
-      <div class="container py-3">
-        <p class="fw-semibold">Kontak Polsek Wilayah Batam</p>
-        <div class="row">
+      <div className="container py-3">
+        <p className="fw-semibold">Kontak Polsek Wilayah Batam</p>
+        <div className="row">
           {
             dataMaps.map(val => (
-              <div class="col-sm-6 col-lg-4">
-                <div class="card border-0">
-                  <div class="card-body">
-                    <h3 class="mb-3 text-style-label">{val.nama}</h3>
-                    <div class="gap-2">
-                      <i class="bi bi-geo-alt"></i>
+              <div className="col-sm-6 col-lg-4">
+                <div className="card border-0">
+                  <div className="card-body">
+                    <h3 className="mb-3 text-style-label">{val.nama}</h3>
+                    <div className="gap-2">
+                      <i className="bi bi-geo-alt"></i>
                       <p className="text-style-paragraf">{val.alamat}</p>
                     </div>
-                    <div class="gap-2 mb-4">
-                      <i class="bi bi-telephone"></i>
+                    <div className="gap-2 mb-4">
+                      <i className="bi bi-telephone"></i>
                       <p className="text-style-paragraf">{val.telp}</p>
                     </div>
                     <iframe

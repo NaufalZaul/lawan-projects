@@ -11,12 +11,13 @@ import './styles/tentang.css';
 import './styles/edukasi.css';
 import './styles/kontak.css';
 import './styles/pengelola.css';
+import './styles/laporan.css';
 
 // import component
 import { NavbarPengelola, NavbarPengguna } from './components/navbar';
 import Dasboard from './pages/pengelola/dasboard';
 import SideBar from './components/sidebar';
-import Laporan, { controlTable } from './pages/pengelola/laporan';
+import Laporan, { controlTable } from './pages/pengelola/Laporan';
 import DetailLaporan from './pages/pengelola/sub_pages/detail_laporan';
 import Beranda from './pages/halaman_utama/beranda';
 import Footer from './components/footer';
@@ -25,28 +26,30 @@ import Login from './pages/login/login';
 import Tentang from './pages/halaman_utama/tentang';
 import Edukasi from './pages/halaman_utama/edukasi';
 import Kontak from './pages/halaman_utama/kontak';
-import SuperAdmin from './pages/superadmin/superadmin';
+// import SuperAdmin from './pages/superadmin/superadmin';
 import DetailArtikel from './pages/halaman_utama/sub_pages/detail_artikel';
 
 // firebase
 import "./api/firebase"
-import { getPengelola } from './api/sistem_pengelola';
-getPengelola()
-
-
+import SuperAdmin from './pages/superadmin/SuperAdmin';
 
 
 
 
 function App() {
-  const { state } = useLocation();
+
+  const { state } = useLocation() || (state.isLogin = false);
+  // console.log(state);
+  // const isLogin = false
+
   const pathname = window.location.pathname
     .split('')
     .slice(0, 7)
     .join('')
 
+  // (state.isLogin == null || state.isLogin == false) ? 
   return (
-    <div className="App">
+    <div className="App" >
       {
         pathname == '/kelola' ? <NavbarPengelola /> :
           pathname !== '/login' ? <NavbarPengguna /> : ''
@@ -66,6 +69,7 @@ function App() {
 
           {/* sisi pengelola */}
           <Route path="/login" element={<Login />} />
+
           <Route path="/kelola" element={<Dasboard />} />
           {
             state !== null ?
@@ -73,7 +77,8 @@ function App() {
                 <Route path={`/kelola/laporan_${state.defaultUrl}`}
                   element={<Laporan
                     table={`${state.defaultUrl}`}
-                    page={`${state.defaultUrl}`} />}
+                    page={`${state.defaultUrl}`}
+                  />}
                 />
                 <Route path="/kelola/detail_laporan"
                   element={<DetailLaporan
@@ -87,7 +92,6 @@ function App() {
               </>
               : ''
           }
-
         </Routes>
       </div>
       {(pathname == '/kelola' || pathname == '/login') ? '' : <Footer />}
@@ -96,9 +100,17 @@ function App() {
 }
 
 
+
+
+
 export default App;
 
-
+// <Route path={`/kelola/laporan_${state.defaultUrl}`}
+//             element={<Laporan
+//               table={`${state.defaultUrl}`}
+//               page={`${state.defaultUrl}`}
+//             />}
+//           />
 {/* <Route path={`/kelola/laporan_${state.defaultUrl}`}
   element={<Laporan
     table={`${state.defaultUrl}`}
