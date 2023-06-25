@@ -1,4 +1,6 @@
+import { useState } from "react"
 import { hapusDataLaporan, updateDataLaporan } from "../api/sistem_data_pengelola"
+import { ubahDataPengelola, hapusDataPengelola, tambahDataPengelola } from "../api/sistem_pengelola"
 
 
 export const Modal = {
@@ -82,57 +84,69 @@ export const Modal = {
       </div>
     </div>
   ),
-  ModalTambahAkun: () => (
-    <div className="modal fade" id="exampleModalTambahAkun" tabIndex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-      <div className="modal-dialog modal-dialog-centered">
-        <div className="modal-content p-2 rounded-4">
-          <div className="modal-header">
-            <h5 className="modal-title" id="TambahAkun">Tambah Akun Pengguna</h5>
-            <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
-          <div className="modal-body">
-            <form action="">
-              <div className="mb-3">
-                <label for="Username" className="form-label">Username</label>
-                <input type="text" className="form-control border border-dark" id="Username" placeholder="Masukan Username" />
-              </div>
-              <div className="mb-3">
-                <label for="Password" className="form-label">Password</label>
-                <input type="password" className="form-control border border-dark" id="Password" placeholder="Masukan Password" />
-              </div>
-              <div className="d-flex justify-content-end">
-                <button type="button" className="btn btn-hehe rounded-2" data-bs-toggle="modal" data-bs-target="#exampleModalBerhasil">Tambah Akun</button>
-              </div>
-            </form>
-          </div>
-        </div>
-      </div>
-    </div>
-  ),
-  ModalUbahAkun: ({ keyData }) => (
-    <div className="modal fade" id="exampleModalUbahAkun" tabIndex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-      <div className="modal-dialog modal-dialog-centered">
-        <div className="modal-content p-2 rounded-4">
-          <div className="modal-header">
-            <h5 className="modal-title" id="TambahAkun">Ubah Akun Pengguna</h5>
-            <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
-          <div className="modal-body">
-            <form action="">
-              <div className="mb-3">
-                <label for="Username" className="form-label">Username</label>
-                <input type="text" className="form-control border border-dark" id="Username" placeholder="Masukan Username" />
-              </div>
-              <div className="d-flex justify-content-end">
-                <button type="button" className="btn btn-hehe rounded-2" data-bs-toggle="modal" data-bs-target="#exampleModalBerhasil">Ubah Akun</button>
-              </div>
-            </form>
+  ModalTambahAkun: () => {
+    const [username, setUsername] = useState('')
+    const [password, setPassword] = useState('')
+    return (
+      <div className="modal fade" id="exampleModalTambahAkun" tabIndex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div className="modal-dialog modal-dialog-centered">
+          <div className="modal-content p-2 rounded-4">
+            <div className="modal-header">
+              <h5 className="modal-title" id="TambahAkun">Tambah Akun Pengguna</h5>
+              <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div className="modal-body">
+              <form action="">
+                <div className="mb-3">
+                  <label for="Username" className="form-label">Username</label>
+                  <input type="text" className="form-control border border-dark" id="Username" placeholder="Masukan Username" onChange={(e) => setUsername(e.target.value)} />
+                </div>
+                <div className="mb-3">
+                  <label for="Password" className="form-label">Password</label>
+                  <input type="password" className="form-control border border-dark" id="Password" placeholder="Masukan Password" onChange={(e) => setPassword(e.target.value)} />
+                </div>
+                <div className="d-flex justify-content-end">
+                  <button type="button" className="btn btn-hehe rounded-2" data-bs-toggle="modal" data-bs-target="#exampleModalBerhasil"
+                    onClick={() => tambahDataPengelola({ username: username, pass: password })}>Tambah Akun</button>
+                </div>
+              </form>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  ),
-  ModalHapusAkun: ({ keyData }) => (
+    )
+  },
+  ModalUbahAkun: ({ idData }) => {
+    const [ubahAkun, setUbahAkun] = useState('')
+    return (
+      <div className="modal fade" id="exampleModalUbahAkun" tabIndex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div className="modal-dialog modal-dialog-centered">
+          <div className="modal-content p-2 rounded-4">
+            <div className="modal-header">
+              <h5 className="modal-title" id="TambahAkun">Ubah Akun Pengguna</h5>
+              <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div className="modal-body">
+              <form action="">
+                <div className="mb-3">
+                  <label for="Username" className="form-label">Username</label>
+                  <input type="text" className="form-control border border-dark" id="Username" placeholder="Masukan Username" onChange={(e) => setUbahAkun(e.target.value)} />
+                </div>
+                <div className="d-flex justify-content-end">
+                  <button type="button" className="btn btn-hehe rounded-2" data-bs-toggle="modal" data-bs-target="#exampleModalBerhasil"
+                    onClick={() => ubahDataPengelola({
+                      usernamebaru: ubahAkun,
+                      idData
+                    })}>Ubah Akun</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    )
+  },
+  ModalHapusAkun: ({ idData }) => (
     <div className="modal fade" id="exampleModalHapusAkun" tabIndex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div className="modal-dialog modal-dialog-centered">
         <div className="modal-content">
@@ -144,7 +158,7 @@ export const Modal = {
             <div className="d-flex justify-content-between">
               <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Tidak</button>
               <button type="button" className="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModalBerhasil"
-                onClick={() => ('sda')}
+                onClick={() => hapusDataPengelola({ idData })}
               >Ya</button>
             </div>
           </div>
@@ -170,4 +184,5 @@ export const Modal = {
     </div>
   )
 }
+
 

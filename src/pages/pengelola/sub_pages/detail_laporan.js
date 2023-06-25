@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import StorageImage from "../../../api/storage_firebase";
-import Button from "../../../components/button";
-import { Modal } from "../../../components/modal";
+import Button from "../../../components/Button";
+import { Modal } from "../../../components/Modal";
 
 const storageImage = StorageImage();
 

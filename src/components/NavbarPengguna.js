@@ -1,34 +1,6 @@
 import { Link } from "react-router-dom";
-import { polsek } from "../api/api";
 
-// dipisah
-
-export function NavbarPengelola() {
-  return (
-    <nav className="d-flex justify-content-between align-items-center bg-blue text-white px-3 py-1">
-      <div className="semi-heading-1">
-        <img className="w-50" src="./images/logo-large-white.png" alt="" />
-      </div>
-      <div className="dropdown">
-        <button
-          className="btn text-white dropdown-toggle"
-          type="button"
-          data-bs-toggle="dropdown"
-          aria-expanded="false"
-        >
-          {polsek[0].nama}
-        </button>
-        <ul className="dropdown-menu">
-          <Link to="/" className="text-decoration-none">
-            <span className="dropdown-item">Keluar</span>
-          </Link>
-        </ul>
-      </div>
-    </nav>
-  );
-}
-
-export function NavbarPengguna() {
+export default function NavbarPengguna() {
   window.addEventListener("scroll", () => {
     window.scrollY > 0
       ? document.querySelector("nav").classList.add("shadow")
@@ -55,27 +27,27 @@ export function NavbarPengguna() {
         <div className="collapse navbar-collapse flex-grow-0" id="navbarSupportedContent">
           <ul className="navbar-nav me-auto mb-2 mb-lg-0">
             <li className="nav-item mx-1">
-              <Link to="/" className="nav-link rounded-2 px-4 text-blue" aria-current="page">
+              <Link to="/" state={{ defaultUrl: 'homepage' }} className="nav-link rounded-2 px-4 text-blue" aria-current="page">
                 Beranda
               </Link>
             </li>
             <li className="nav-item mx-1">
-              <Link to="/tentang" className="nav-link rounded-2 px-4 text-blue">
+              <Link to="/tentang" state={{ defaultUrl: 'homepage' }} className="nav-link rounded-2 px-4 text-blue">
                 Tentang
               </Link>
             </li>
             <li className="nav-item mx-1">
-              <Link to="/edukasi" className="nav-link rounded-2 px-4 text-blue">
+              <Link to="/edukasi" state={{ defaultUrl: 'homepage' }} className="nav-link rounded-2 px-4 text-blue">
                 Edukasi
               </Link>
             </li>
             <li className="nav-item mx-1">
-              <Link to="/kontak" className="nav-link rounded-2 px-4 text-blue">
+              <Link to="/kontak" state={{ defaultUrl: 'homepage' }} className="nav-link rounded-2 px-4 text-blue">
                 Kontak
               </Link>
             </li>
             <li className="nav-item mx-1">
-              <Link to="/pengelola" className="nav-link rounded-2 px-4 text-blue">
+              <Link to="/pengelola" state={{ defaultUrl: 'homepage' }} className="nav-link rounded-2 px-4 text-blue">
                 Pengelola
               </Link>
             </li>

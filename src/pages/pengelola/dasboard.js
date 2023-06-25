@@ -1,16 +1,16 @@
 import React from "react";
-import chart from "../../components/chart";
+import Chart from "../../components/Chart";
 import { polsek } from "../../api/api";
 
 class Dasboard extends React.Component {
   constructor(props) {
     super();
   }
-  componentDidMount() {}
+  componentDidMount() { }
 
   componentWillUnmount() {
     if (window.location.pathname === "/kelola") {
-      chart();
+      Chart();
     }
   }
 

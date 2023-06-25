@@ -1,4 +1,4 @@
-export default function search() {
+export default function Search() {
   return (
     <div className=" w-50 input-group me-3">
       <input type="text" className="form-control border-end-0" placeholder="Search" aria-label="Recipient's username" aria-describedby="basic-addon2" />

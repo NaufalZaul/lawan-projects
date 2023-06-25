@@ -1,5 +1,5 @@
 import { PDFDownloadLink } from "@react-pdf/renderer";
-import PrintPDF from "./printpdf";
+import PrintPDF from "./Printpdf";
 
 const Button = {
   ButtonTerima: () => {
@@ -90,7 +90,7 @@ const Button = {
       data-bs-toggle="modal"
       data-bs-target="#exampleModalTambahAkun"
     >
-      Tambah Pengguna
+      Tambah Akun
     </button>
   ),
   ButtonUbahAkun: () => (

@@ -13,27 +13,33 @@ import "./styles/pengelola.css";
 import "./styles/laporan.css";
 
 // import component
-import { NavbarPengelola, NavbarPengguna } from "./components/navbar";
 import Dasboard from "./pages/pengelola/dasboard";
-import SideBar from "./components/sidebar";
 import Laporan from "./pages/pengelola/Laporan";
 import DetailLaporan from "./pages/pengelola/sub_pages/detail_laporan";
 import Beranda from "./pages/halaman_utama/beranda";
-import Footer from "./components/footer";
 import Pengelola from "./pages/halaman_utama/pengelola";
 import Login from "./pages/login/login";
 import Tentang from "./pages/halaman_utama/tentang";
 import Edukasi from "./pages/halaman_utama/edukasi";
 import Kontak from "./pages/halaman_utama/kontak";
-// import SuperAdmin from './pages/superadmin/superadmin';
+import SuperAdmin from './pages/superadmin/SuperAdmin';
 import DetailArtikel from "./pages/halaman_utama/sub_pages/detail_artikel";
+import NavbarPengelola from './components/NavbarPengelola'
+import NavbarPengguna from './components/NavbarPengguna'
+import Sidebar from './components/Sidebar'
+import Footer from './components/Footer'
+
+
+
+
 
 // Authentication private routing
 import PrivateRoute from "./components/PrivateRoutes";
 
 // firebase
 import "./api/firebase";
-import SuperAdmin from "./pages/superadmin/SuperAdmin";
+
+
 
 function App() {
   const { state } = useLocation();
@@ -46,14 +52,11 @@ function App() {
         <NavbarPengelola />
       ) : pathname !== "/login" ? (
         <NavbarPengguna />
-      ) : (
-        ""
-      )}
-      <div {...(pathname === "/kelola" ? { className: "d-flex" } : "")}>
-        {pathname === "/kelola" ? <SideBar /> : ""}
+      ) : null
+      }
+      <div {...(pathname === "/kelola" ? { className: "d-flex" } : null)}>
+        {pathname === "/kelola" ? <Sidebar /> : null}
         <Routes>
-          {/* superadmin */}
-          <Route path="/superadmin" element={<SuperAdmin />} />
 
           {/* sisi pengguna */}
           <Route path="/" element={<Beranda />} />
@@ -65,7 +68,8 @@ function App() {
           {/* sisi pengelola */}
           <Route path="/login" element={<Login />} />
 
-          <Route path="/kelola" element={<PrivateRoute state={state} />}>
+          {/* <Route path="/kelola" element={<PrivateRoute state={state} />}> */}
+          <Route path="/kelola" element={<PrivateRoute state={state} />} >
             <Route index element={<Dasboard />} caseSensitive />
             <Route path="laporan-diterima" element={<Laporan />} caseSensitive />
             <Route path="laporan-diproses" element={<Laporan />} caseSensitive />
@@ -73,9 +77,13 @@ function App() {
             <Route path="laporan-selesai" element={<Laporan />} caseSensitive />
             <Route path="detail_laporan" element={<DetailLaporan />} caseSensitive />
             <Route path="edukasi/detail_artikel" element={<DetailArtikel />} caseSensitive />
+
+            {/* superadmin */}
+            <Route path="superadmin" element={<SuperAdmin />} />
+
           </Route>
-          <Route
-            path="*"
+
+          <Route path="*"
             element={
               <h2 style={{ textAlign: "center", margin: "auto", display: "flex" }}>
                 404 Page Not Found
