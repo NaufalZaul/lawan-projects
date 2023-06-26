@@ -1,4 +1,6 @@
 import { Link, useLocation } from "react-router-dom";
+import { Icon } from '@iconify/react';
+
 
 export default function SideBar() {
   const handleNavigasi = (target) => {
@@ -10,7 +12,7 @@ export default function SideBar() {
     });
   };
 
-  const { pathname } = useLocation()
+  const { pathname, state } = useLocation()
 
   return (
     <div className="min-vh-100 d-flex flex-column border p-3 text-style-sidebar" >
@@ -20,10 +22,14 @@ export default function SideBar() {
             <li className="nav-item my-1">
               <Link
                 to="/kelola"
-                className="nav-link text-blue active-menu"
+                className="nav-link text-blue active-menu d-flex align-items-center"
                 onClick={(e) => handleNavigasi(e.currentTarget)}
-                state={{ defaultUrl: "kelola" }}>
-                <i className="fas fa-border-all me-2"></i>
+                state={{
+                  defaultUrl: "superadmin",
+                  isLogin: state.isLogin,
+                  userLoginName: state.userLoginName
+                }}>
+                <Icon icon="ion:person-sharp" width="20" height="20" className="me-2" />
                 Akun Pengelola
               </Link>
             </li>
@@ -35,8 +41,12 @@ export default function SideBar() {
                 to="/kelola"
                 className="nav-link text-blue active-menu"
                 onClick={(e) => handleNavigasi(e.currentTarget)}
-                state={{ defaultUrl: "kelola" }}>
-                <i className="fas fa-border-all me-2"></i>
+                state={{
+                  defaultUrl: "kelola",
+                  isLogin: state.isLogin,
+                  userLoginName: state.userLoginName
+                }}>
+                <Icon icon="fluent:board-16-regular" width="20px" height="20px" className="me-2" />
                 Dasboard
               </Link>
             </li>
@@ -45,8 +55,12 @@ export default function SideBar() {
                 to="/kelola/laporan-diterima"
                 className="nav-link text-blue"
                 onClick={(e) => handleNavigasi(e.currentTarget)}
-                state={{ defaultUrl: "diterima" }}>
-                <i className="fas fa-file-download me-2"></i>
+                state={{
+                  defaultUrl: "diterima",
+                  isLogin: state.isLogin,
+                  userLoginName: state.userLoginName
+                }}>
+                <Icon icon="fluent:document-arrow-down-16-regular" width="20" height="20" className="me-2" />
                 Laporan Masuk
               </Link>
             </li>
@@ -55,8 +69,12 @@ export default function SideBar() {
                 to="/kelola/laporan-diproses"
                 className="nav-link text-blue"
                 onClick={(e) => handleNavigasi(e.currentTarget)}
-                state={{ defaultUrl: "diproses" }}>
-                <i className="fas fa-file-signature me-2"></i>
+                state={{
+                  defaultUrl: "diproses",
+                  isLogin: state.isLogin,
+                  userLoginName: state.userLoginName
+                }}>
+                <Icon icon="fluent:document-briefcase-20-regular" width="20" height="20" className="me-2" />
                 Laporan Diproses
               </Link>
             </li>
@@ -65,8 +83,12 @@ export default function SideBar() {
                 to="/kelola/laporan-selesai"
                 className="nav-link text-blue"
                 onClick={(e) => handleNavigasi(e.currentTarget)}
-                state={{ defaultUrl: "selesai" }}>
-                <i className="fas fa-file-alt me-2"></i>
+                state={{
+                  defaultUrl: "selesai",
+                  isLogin: state.isLogin,
+                  userLoginName: state.userLoginName
+                }}>
+                <Icon icon="fluent:document-checkmark-16-regular" width="20" height="20" className="me-2" />
                 Laporan Selesai
               </Link>
             </li>
@@ -75,13 +97,17 @@ export default function SideBar() {
                 to="/kelola/laporan-ditolak"
                 className="nav-link text-blue"
                 onClick={(e) => handleNavigasi(e.currentTarget)}
-                state={{ defaultUrl: "ditolak" }}>
-                <i className="fas fa-file-prescription me-2"></i>
+                state={{
+                  defaultUrl: "ditolak",
+                  isLogin: state.isLogin,
+                  userLoginName: state.userLoginName
+                }}>
+                <Icon icon="fluent:document-dismiss-16-regular" width="20" height="20" className="me-2" />
                 Laporan Ditolak
               </Link>
             </li>
           </ul>
       }
-    </div >
+    </div>
   )
 }

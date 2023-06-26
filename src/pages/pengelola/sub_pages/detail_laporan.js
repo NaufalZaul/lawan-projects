@@ -1,39 +1,48 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import StorageImage from "../../../api/storage_firebase";
 import Button from "../../../components/Button";
 import { Modal } from "../../../components/Modal";
 
 const storageImage = StorageImage();
 
-export default function DetailLaporan({ detail, backpage }) {
+export default function DetailLaporan() {
+
+  const { state } = useLocation();
+
+
   return (
     <div className="w-100 container bg-secondary-subtle p-3 row justify-content-center mx-0">
       <div className="col-7 d-flex flex-column justify-content-between bg-white p-4">
         <div className="">
-          <Link to={`/kelola/laporan_${backpage}`} state={{ defaultUrl: backpage }}>
+          <Link to={`/kelola/laporan-${state.defaultUrl}`}
+            state={{
+              defaultUrl: state.defaultUrl,
+              isLogin: state.isLogin,
+              userLoginName: state.userLoginName
+            }}>
             <button type="submit" className="border-0 bg-transparent mb-5 label">
               <i className="fas fa-arrow-circle-left me-2"></i>
               Kembali
             </button>
           </Link>
-          <h4 className="semi-heading-2">{detail.dataValue.judul_laporan}</h4>
+          <h4 className="semi-heading-2">{state.detailData.dataValue.judul_laporan}</h4>
           <ul className="d-flex justify-content-between my-4 p-0">
             <li className="list-group-item">
               <p className="bold-paragraf mb-1">Jenis Kekerasan</p>
-              <p className="paragraf">{detail.dataValue.jenis_kekerasan}</p>
+              <p className="paragraf">{state.detailData.dataValue.jenis_kekerasan}</p>
             </li>
             <li className="list-group-item">
               <p className="bold-paragraf mb-1">Lokasi Kejadian</p>
-              <p className="paragraf">{detail.dataValue.lokasi_kejadian}</p>
+              <p className="paragraf">{state.detailData.dataValue.lokasi_kejadian}</p>
             </li>
             <li className="list-group-item">
               <p className="bold-paragraf mb-1">Tanggal Kejadian</p>
-              <p className="paragraf">{detail.dataValue.tanggal_kejadian}</p>
+              <p className="paragraf">{state.detailData.dataValue.tanggal_kejadian}</p>
             </li>
           </ul>
           <div className="">
             <p className="bold-paragraf mb-1">Deskripsi</p>
-            <p className="paragraf">{detail.dataValue.isi_laporan}</p>
+            <p className="paragraf">{state.detailData.dataValue.isi_laporan}</p>
           </div>
         </div>
         <div className="row row-cols-4 my-5 mx-0">
@@ -46,15 +55,15 @@ export default function DetailLaporan({ detail, backpage }) {
           <img src={storageImage[1]} alt="" className="my-2" />
         </div>
 
-        {detail.dataValue.status_laporan === "diterima" ? (
+        {state.detailData.dataValue.status_laporan === "diterima" ? (
           <div className="d-flex justify-content-between">
-            <Button.ButtonTerima />
-            <Button.ButtonDownload data={detail.dataValue} />
-            <Button.ButtonTolak />
+            <Button.ButtonTerima text="Terima" />
+            <Button.ButtonDownload data={state.detailData} text="PDF" />
+            <Button.ButtonTolak text="Tolak" />
           </div>
         ) : (
           <div className="d-flex justify-content-between">
-            <Button.ButtonDownload data={detail.dataValue} />
+            <Button.ButtonDownload data={state.detailData} />
           </div>
         )}
       </div>
@@ -90,16 +99,15 @@ export default function DetailLaporan({ detail, backpage }) {
           </tbody>
         </table>
       </div>
+
       <Modal.ModalTerima
-        keyData={detail.idData}
-        data={detail.dataValue}
-        status={{ status: "diproses" }}
+        keyData={state.detailData.idData}
+        status={{ status_laporan: "diproses" }}
       />
 
       <Modal.ModalTolak
-        keyData={detail.idData}
-        data={detail.dataValue}
-        status={{ status: "ditolak" }}
+        keyData={state.detailData.idData}
+        status={{ status_laporan: "ditolak" }}
       />
 
       <Modal.ModalBerhasil />

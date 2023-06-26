@@ -1,42 +1,48 @@
 import { PDFDownloadLink } from "@react-pdf/renderer";
 import PrintPDF from "./Printpdf";
+import { Icon } from '@iconify/react'
 
 const Button = {
-  ButtonTerima: () => {
+  ButtonTerima: (props, { data }) => {
     return (
       <button
         type="button"
         className="btn button-success text-style-button"
         data-bs-toggle="modal"
         data-bs-target="#exampleModalTerima"
+        onClick={data}
       >
-        <i className="fas fa-check"></i>
+        {props.text}
+        <Icon icon="mingcute:check-fill" width="25" height="25" className="ms-2" />
       </button>
     );
   },
-  ButtonTolak: () => (
+  ButtonTolak: (props, { data }) => (
     <button
       type="button"
       className="btn button-danger text-style-button"
       data-bs-toggle="modal"
       data-bs-target="#exampleModalTolak"
+      onClick={data}
     >
-      <i className="fas fa-times-circle"></i>
+      {props.text}
+      <Icon icon="mingcute:close-fill" width="25" height="25" className="ms-2" />
     </button>
   ),
-  ButtonHapus: () => (
+  ButtonHapus: ({ data }) => (
     <button
       type="button"
       className="btn button-danger text-style-button"
       data-bs-toggle="modal"
       data-bs-target="#exampleModalHapus"
+      onClick={data}
     >
-      <i className="fas fa-times-circle"></i>
+      <Icon icon="mingcute:delete-2-line" width="25" height="25" />
     </button>
   ),
   ButtonDetail: () => (
     <button type="button" className="btn button-print text-style-button">
-      <i className="fas fa-file-alt"></i>
+      <Icon icon="icon-park-outline:view-grid-detail" width="25" height="25" />
     </button>
   ),
   ButtonKonfirmasi: () => (
@@ -53,9 +59,9 @@ const Button = {
     <button
       type="button"
       onClick={() => alert(data)}
-      className="btn button-print text-style-button"
+      className="btn button-print text-style-button d-flex align-items-center"
     >
-      <i className="fas fa-sort-amount-up me-1 px-1"></i>
+      <Icon icon="bx:sort-up" width="22" height="22" className="me-2 " />
       Urutkan
     </button>
   ),
@@ -65,31 +71,33 @@ const Button = {
       Kembali
     </button>
   ),
-  ButtonSelesai: () => (
+  ButtonSelesai: ({ data }) => (
     <button
       type="button"
       className="btn button-success text-style-button"
       data-bs-toggle="modal"
+      onClick={data}
       data-bs-target="#exampleModalSelesai"
     >
-      selesai
-      {/* <i className="fas fa-check"></i> */}
+      <i className="fas fa-check"></i>
     </button>
   ),
-  ButtonDownload: ({ data }) => (
+  ButtonDownload: (props, { data }) => (
     <PDFDownloadLink document={<PrintPDF data={data} />} fileName="Laporan">
       <button type="button" className="btn button-print text-style-button">
-        <i className="fas fa-file-alt"></i>
+        {props.text}
+        <Icon icon="fluent:document-pdf-20-regular" width="20" height="20" className="ms-2" />
       </button>
     </PDFDownloadLink>
   ),
   ButtonTambahAkun: () => (
     <button
       type="button"
-      className="btn btn-primary"
+      className="btn button-print text-style-button"
       data-bs-toggle="modal"
       data-bs-target="#exampleModalTambahAkun"
     >
+      <Icon icon="ion:person-add" width="20" height="20" className="me-2" />
       Tambah Akun
     </button>
   ),

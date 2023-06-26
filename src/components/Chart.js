@@ -5,13 +5,14 @@ export default function chart() {
 
   const ctx = document.getElementById('myChart')
 
+
   new Chart(ctx, {
     type: 'line',
     data: {
-      labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+      labels: ['Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni', 'Juli', 'Agustus', 'September', 'Oktober', 'November', 'Desember'],
       datasets: [{
         label: '# of Votes',
-        data: [12, 19, 3, 5, 2, 3],
+        data: [10, 20, 30, 40, 10, 20, 30, 5, 20, 30, 25, 20],
         borderWidth: 1
       }]
     },

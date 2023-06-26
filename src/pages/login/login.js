@@ -27,7 +27,11 @@ export default function Login() {
 
   const [isUsername, setIsUsername] = useState('')
   const [isPass, setIsPass] = useState('')
-  const [isLogin, setIsLogin] = useState(false)
+  const [isLogin, setIsLogin] = useState({
+    loginStatus: false,
+    userLoginName: '',
+    navigateTo: '/login'
+  })
 
   useEffect(() => {
     get(child(ref(database), 'polsek/'))
@@ -37,8 +41,28 @@ export default function Login() {
           if (Object.hasOwnProperty.call(datas, key)) {
             const element = datas[key];
             if (isUsername === element.username && isPass === element.pass) {
-              setIsLogin(true)
+              setIsLogin({
+                loginStatus: true,
+                userLoginName: element.nama,
+                navigateTo: '/kelola'
+              })
+            } else {
+              get(child(ref(database), 'superadmin/'))
+                .then(e => {
+                  const datasSPA = e.val()
+                  if (isUsername === datasSPA.username && isPass === datasSPA.pass) {
+                    setIsLogin({
+                      loginStatus: true,
+                      userLoginName: datasSPA.nama,
+                      navigateTo: '/kelola/superadmin'
+                    })
+                  }
+                })
             }
+          } else {
+            setIsLogin({
+              loginStatus: false
+            })
           }
         }
       })
@@ -80,8 +104,13 @@ export default function Login() {
               />
             </div>
           </div>
-          <Link to={isLogin == false ? '/login' : '/kelola'}
-            state={{ isLogin: isLogin, defaultUrl: 'dashboard' }}
+          <Link to={isLogin.loginStatus === false ?
+            isLogin.navigateTo : isLogin.navigateTo}
+            state={{
+              isLogin: isLogin.loginStatus,
+              defaultUrl: 'dashboard',
+              userLoginName: isLogin.userLoginName
+            }}
             className='w-100 mt-3 btn text-style-button button-print'
             id='login'>
             Login

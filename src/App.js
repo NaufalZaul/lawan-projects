@@ -75,8 +75,7 @@ function App() {
             <Route path="laporan-diproses" element={<Laporan />} caseSensitive />
             <Route path="laporan-ditolak" element={<Laporan />} caseSensitive />
             <Route path="laporan-selesai" element={<Laporan />} caseSensitive />
-            <Route path="detail_laporan" element={<DetailLaporan />} caseSensitive />
-            <Route path="edukasi/detail_artikel" element={<DetailArtikel />} caseSensitive />
+            <Route path="detail-laporan" element={<DetailLaporan />} caseSensitive />
 
             {/* superadmin */}
             <Route path="superadmin" element={<SuperAdmin />} />

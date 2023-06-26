@@ -2,45 +2,50 @@ import React, { useEffect, useState } from "react";
 import Button from "../../components/Button";
 import { Link, useLocation } from 'react-router-dom'
 import { Modal } from "../../components/Modal";
-import {
-  ref,
-  onValue,
-  child,
-} from "https://www.gstatic.com/firebasejs/9.22.1/firebase-database.js";
+import { Icon } from '@iconify/react'
+import { ref, onValue, child } from "https://www.gstatic.com/firebasejs/9.22.1/firebase-database.js";
 import { database } from "../../api/firebase";
+
+
+
+
+
+
 const $ = require('jquery');
 $.DataTable = require('datatables.net');
-// import SistemDataPengelola, { hapusDataLaporan } from "../../api/sistem_data_pengelola";
 // import StorageImage from "../../api/storage_firebase";
 
 
-// function controlTable() {
-//   setTimeout(() => {
-//     const table = $('#example').DataTable({
-//       "columnDefs": [{
-//         // "orderable": true,
-//       }],
-//       // ordering: false,
-//       paging: true,
-//       searching: false,
-//     });
+function controlTable() {
+  setTimeout(() => {
+    const table = $('#example').DataTable({
+      "columnDefs": [{
+        // "orderable": true,
+      }],
+      // ordering: false,
+      paging: true,
+      searching: false,
+    });
 
-//     table.on('order.dt page.dt', () => {
-//       table.column(0, { order: 'applied', page: 'applied' })
-//         .nodes()
-//         .each((cell, count) => {
-//           cell.innerHTML = count + 1;
-//         });
-//     }).draw();
+    table.on('order.dt page.dt', () => {
+      table.column(0, { order: 'applied', page: 'applied' })
+        .nodes()
+        .each((cell, count) => {
+          cell.innerHTML = count + 1;
+        });
+    }).draw();
 
-//     table.destroy()
-//   }, 2000)
-// }
+    table.destroy()
+  }, 2000)
+}
 
-export default function Laporan({ table, page }) {
-  console.log(useLocation());
+export default function Laporan() {
+  const { state } = useLocation()
+  console.log(state);
   // const storageImage = StorageImage()
+
   const [dataLaporan, setDataLaporan] = useState([])
+  const [dataToModal, setDataToModal] = useState([])
 
   useEffect(() => {
     onValue(child(ref(database), "laporan/"), (dt) => {
@@ -52,8 +57,10 @@ export default function Laporan({ table, page }) {
       });
       setDataLaporan(dataArr)
     });
-    // controlTable()
+    controlTable()
   }, [])
+
+
   return (
     <div className="container bg-secondary-subtle pt-2">
       <div className="card p-4 m-2">
@@ -62,18 +69,20 @@ export default function Laporan({ table, page }) {
           <div className=" w-50 input-group me-3">
             <input type="text" className="form-control border-end-0" placeholder="Search" aria-label="Recipient's username" aria-describedby="basic-addon2" />
             <span className="input-group-text bg-transparent" id="basic-addon2">
-              <i className="fas fa-search"></i>
+              <Icon icon="carbon:search" width="20" height="20" />
             </span>
           </div>
           <Button.ButtonUrutkan
             data='nopal' />
         </div>
-
+        <h3 class="semi-heading-3 text-capitalize">Laporan {state.defaultUrl}</h3>
         <div id="demo_info" className="box"></div>
         <table id="example" className="display table">
           <thead className="border-3">
             <tr>
-              <th scope="col" className="text-style-button text-center">No</th>
+              <th scope="col" className="text-style-button text-center">
+                <Icon icon="iconamoon:profile-circle-bold" width="22" height="22" />
+              </th>
               <th scope="col" className="text-style-button">Judul Laporan</th>
               <th scope="col" className="text-style-button text-center">Jenis Kekerasan</th>
               <th scope="col" className="text-style-button text-center">Tanggal Laporan</th>
@@ -83,42 +92,51 @@ export default function Laporan({ table, page }) {
           <tbody>
             {
               dataLaporan.map((data, key) =>
-                (data.dataValue.status_laporan === table) ? (
+                (data.dataValue.status_laporan === state.defaultUrl) ? (
                   <tr key={key} className="text-style-paragraf align-middle" id="data-laporan">
                     <td className="text-center">
-                      <img className="w-25 profile-image" src='images/foto.png' alt="" />
+                      <img className="w-100 profile-image" src='images/foto.png' alt="" />
                     </td>
                     <td>{data.dataValue.judul_laporan}</td>
                     <td className="text-center">{data.dataValue.jenis_kekerasan}</td>
                     <td className="text-center">{data.dataValue.tanggal_kejadian}</td>
                     {
-                      (table === 'ditolak') ? (
+                      (state.defaultUrl === 'ditolak') ? (
                         <td className="text-center d-flex justify-content-evenly">
-                          <Link to="/kelola/detail_laporan"
+                          <Link to="/kelola/detail-laporan"
                             state={{
-                              detailData: data.dataValue, backpage: page
+                              detailData: data,
+                              defaultUrl: state.defaultUrl,
+                              isLogin: state.isLogin,
+                              userLoginName: state.userLoginName
                             }}>
                             <Button.ButtonDetail />
                           </Link>
-                          <Button.ButtonHapus />
+                          <Button.ButtonHapus data={() => setDataToModal(data)} />
                         </td>
-                      ) : (table === 'diproses') ? (
+                      ) : (state.defaultUrl === 'diproses') ? (
                         <td className="text-center d-flex justify-content-evenly">
-                          <Link to="/kelola/detail_laporan"
+                          <Link to="/kelola/detail-laporan"
                             state={{
-                              detailData: data.dataValue, backpage: page
+                              detailData: data,
+                              defaultUrl: state.defaultUrl,
+                              isLogin: state.isLogin,
+                              userLoginName: state.userLoginName
                             }}>
                             <Button.ButtonDetail />
                           </Link>
-                          <Button.ButtonTolak />
-                          <Button.ButtonTerima />
+                          <Button.ButtonTolak data={() => setDataToModal(data)} />
+                          <Button.ButtonSelesai data={() => setDataToModal(data)} />
 
                         </td>
                       ) : (
                         <td className="text-center">
-                          <Link to="/kelola/detail_laporan"
+                          <Link to="/kelola/detail-laporan"
                             state={{
-                              detailData: data.dataValue, backpage: page
+                              detailData: data,
+                              defaultUrl: state.defaultUrl,
+                              isLogin: state.isLogin,
+                              userLoginName: state.userLoginName
                             }}>
                             <Button.ButtonDetail />
                           </Link>
@@ -129,22 +147,14 @@ export default function Laporan({ table, page }) {
                   </tr>
                 ) : '')
             }
-
           </tbody>
         </table>
       </div>
 
-      {/* <Modal.ModalTerima /> */}
-      <Modal.ModalTolak />
+      <Modal.ModalSelesai keyData={dataToModal.idData} status={{ status_laporan: "selesai" }} />
+      <Modal.ModalTolak keyData={dataToModal.idData} status={{ status_laporan: "ditolak" }} />
+      <Modal.ModalHapus keyData={dataToModal.idData} />
       <Modal.ModalBerhasil />
-      {/* <Modal.ModalTerima keyData={data.idData} data={data.dataValue}
-        status={{ status: "diproses" }} />
-      <Modal.ModalTolak keyData={data.idData} data={data.dataValue}
-        statusData={{ status: "ditolak" }} />
-      <Modal.ModalHapus keyData={data.idData} />
-
-      <Modal.ModalBerhasil />
- */}
 
     </div>
   )
