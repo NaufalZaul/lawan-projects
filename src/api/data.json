@@ -1,79 +1,100 @@
 [
   {
+    "id_polsek": "-NXsKgeUC3_C8Xt9lgvM",
+    "status_laporan": "diterima",
     "nama": "Gusracita Rubiaty Pratiwi",
     "usia": "20 tahun",
     "telp": "085363809742",
     "alamat": "komplek tiban ayu, blok m2 no.09 sekupang, kota batam.",
     "lokasi_kejadian": "Rumah",
-    "tanggal_kejadian": "21 juni 2023",
+    "tanggal_kejadian": "21/06/2023",
     "judul_laporan": "kekerasan terhadap adik",
-    "jenis_laporan": "fisik atau psikis",
-    "isi_laporan": "saya sering di pukuli oleh kakak saya, badan saya luka semua karena sering di pukulin. saya sampai tidak bisa beraktivitas karena luka yang ada di tubuh saya lumayan banyak. Setiap hari kakak saya memperlakukan saya dengan kasar, sehingga fisik dan psikis saya terganggu."
+    "jenis_kekerasan": "fisik atau psikis",
+    "isi_laporan": "saya sering di pukuli oleh kakak saya, badan saya luka semua karena sering di pukulin. saya sampai tidak bisa beraktivitas karena luka yang ada di tubuh saya lumayan banyak. Setiap hari kakak saya memperlakukan saya dengan kasar, sehingga fisik dan psikis saya terganggu.",
+    "unggah_bukti": ""
   },
   {
+    "id_polsek": "-NXsKgeUC3_C8Xt9lgvM",
+    "status_laporan": "diterima",
     "nama": "Farhan Abdurrahman Zain",
     "usia": "19 tahun",
     "telp": "089875757575",
     "alamat": "Taman Sari Hijau, blok Z no.99, Sekupang, Batam",
     "lokasi_kejadian": "Taman Sari Hijau",
-    "tanggal_kejadian": "20 juni 2023",
+    "tanggal_kejadian": "20/06/2023",
     "judul_laporan": "pemukulan oleh remaja taman sari hijau",
-    "jenis_laporan": "fisik atau psikis",
-    "isi_laporan": "Saya mendapat pemukulan secara beramai-ramai oleh remaja komplek saya saat sedang bermain di lapangan, kronologi awal beberapa dari mereka bercanda kepada saya tetapi malah menyakiti perasaan saya, kemudian saya membalas dengan candaan yang sama,lalu mereka langsung tidak senang kepada saya dan langsung melakukanpemukulan  secara beramai-ramai kepada saya. banyak memar di badan saya dan saya    tidak terima dengan perlakuan tersebut."
+    "jenis_kekerasan": "fisik atau psikis",
+    "isi_laporan": "Saya mendapat pemukulan secara beramai-ramai oleh remaja komplek saya saat sedang bermain di lapangan, kronologi awal beberapa dari mereka bercanda kepada saya tetapi malah menyakiti perasaan saya, kemudian saya membalas dengan candaan yang sama,lalu mereka langsung tidak senang kepada saya dan langsung melakukanpemukulan  secara beramai-ramai kepada saya. banyak memar di badan saya dan saya    tidak terima dengan perlakuan tersebut.",
+    "unggah_bukti": ""
   },
   {
+    "id_polsek": "-NXsKgeUC3_C8Xt9lgvM",
+    "status_laporan": "diterima",
     "nama": "Naufal Zaul Karim",
     "usia": "18 tahun",
     "telp": "085367899845",
     "alamat": "komplek baloi permata regency blok x no.300",
     "lokasi_kejadian": "lapangan basket komplek baloi permata regency",
-    "tanggal_kejadian": "20 juni 2023",
+    "tanggal_kejadian": "20/06/2023",
     "judul_laporan": "Di keroyokin ketika sedang main basket",
-    "jenis_laporan": "fisik atau psikis",
-    "isi_laporan": "pada tanggal 20 juni ketika saya sedang bermain basket bersama adik dan teman-teman saya, say amemenangkan pertandingan tersebut, akan tetapi teman-teman saya tidak senang dan berakhir saya di gebukin disana hingga  tak sadarkan diri. hidung dan tangan saya patah karena di injak. pada saat itu adik saya hanya bisa menangis sambil berlari memanggil orang tua kami. semoga dalam kasus ini saya mendapatkan keadilan."
+    "jenis_kekerasan": "fisik atau psikis",
+    "isi_laporan": "pada tanggal 20 juni ketika saya sedang bermain basket bersama adik dan teman-teman saya, say amemenangkan pertandingan tersebut, akan tetapi teman-teman saya tidak senang dan berakhir saya di gebukin disana hingga  tak sadarkan diri. hidung dan tangan saya patah karena di injak. pada saat itu adik saya hanya bisa menangis sambil berlari memanggil orang tua kami. semoga dalam kasus ini saya mendapatkan keadilan.",
+    "unggah_bukti": ""
   },
   {
+    "id_polsek": "-NXsKgeUC3_C8Xt9lgvM",
+    "status_laporan": "diterima",
     "nama": "Fitrotul Khasanah",
     "usia": "25 tahun",
     "telp": "081278986621",
     "alamat": "Perumahan Greenland, blok C no.23, Batam Centre, Batam",
     "lokasi_kejadian": "Rumah",
-    "tanggal_kejadian": "17 Mei 2023",
+    "tanggal_kejadian": "17/05/2023",
     "judul_laporan": "Pemukulan secara fisik oleh suami",
-    "jenis_laporan": "Kekerasan dalam rumah tangga",
-    "isi_laporan": "Saya mendapat kekerasan fisik oleh suami saya, banyak sekali luka pada tubuh saya, mulai dari luka gores sampe luka lebam,saya sudah merasa tidak tahan lagi dengan sikap nya dan rasa sakit pada tubuh saya, saya ingin mendapat perlindungan dan perbuatan dia segera ditindak."
+    "jenis_kekerasan": "Kekerasan dalam rumah tangga",
+    "isi_laporan": "Saya mendapat kekerasan fisik oleh suami saya, banyak sekali luka pada tubuh saya, mulai dari luka gores sampe luka lebam,saya sudah merasa tidak tahan lagi dengan sikap nya dan rasa sakit pada tubuh saya, saya ingin mendapat perlindungan dan perbuatan dia segera ditindak.",
+    "unggah_bukti": ""
   },
   {
+    "id_polsek": "-NXsKgeUC3_C8Xt9lgvM",
+    "status_laporan": "diterima",
     "nama": "Nurul Farada Purba",
     "usia": "26 tahun",
     "telp": "0852 8761 9012",
     "alamat": "Perumahan Griya Prima, blok SS no.03, Batu Aji, Batam",
     "lokasi_kejadian": "SDN 002 Batu Aji",
-    "tanggal_kejadian": "05 Juni 2023",
+    "tanggal_kejadian": "05/06/2023",
     "judul_laporan": "Pembulian dan pemukulan terhadap anak saya di sekolah",
-    "jenis_laporan": "Fisik dan Psikis",
-    "isi_laporan": "Anak saya mendapatkan perlakuan pembulian dan pemukulan oleh beberapa teman di sekolah nya, saat ini anak saya memiliki beberapa luka lebam dibagian lengan dan punggung, dan anak saya mengalami trauma sehingga tidak mau berangkat sekolah, saya sudah menghubungi pihak sekolah tetapi hanya mendapat tanggapan biasa, saya tidak terima dan ingin kasus ini segera ditindak."
+    "jenis_kekerasan": "Fisik dan Psikis",
+    "isi_laporan": "Anak saya mendapatkan perlakuan pembulian dan pemukulan oleh beberapa teman di sekolah nya, saat ini anak saya memiliki beberapa luka lebam dibagian lengan dan punggung, dan anak saya mengalami trauma sehingga tidak mau berangkat sekolah, saya sudah menghubungi pihak sekolah tetapi hanya mendapat tanggapan biasa, saya tidak terima dan ingin kasus ini segera ditindak.",
+    "unggah_bukti": ""
   },
   {
+    "id_polsek": "-NXsKgeUC3_C8Xt9lgvM",
+    "status_laporan": "diterima",
     "nama": "Hafara Putri",
     "usia": "17 tahun",
     "telp": "085563809747",
     "alamat": "perumahan nongsa puri ayu, kota batam.",
     "lokasi_kejadian": "di toilet sekolah SMAN 80 Batam",
-    "tanggal_kejadian": "20 juni 2023",
+    "tanggal_kejadian": "20/06/2023",
     "judul_laporan": "di bully di toilet sekolah hingga menyebabkan luka fisik dan psikis",
-    "jenis_laporan": "fisik atau psikis",
-    "isi_laporan": "pada tanggal 20 juni ketika saya sedang buang air kecil di toilet, tiba-tiba kakak kelas saya datang mengampiri sya. saya di siram dengan air 1 ember, di tampar sebanyak 3 kali, di pukul akai tempat bekal, dan saya juga di cekik hingga kesulitan untuk bernafas. ketika saya menanyakan kenapa dia melakukannya, katanya karena cowok kakak ini suka sama saya. padahal say a aja gak kenal sama kakak ini dan cowo nya. sekarang say amenjadi takut jika pergi ke sekolah.karena takut bertemu dengan kakak itu dan kejadian yang sama terulang kembali."
+    "jenis_kekerasan": "fisik atau psikis",
+    "isi_laporan": "pada tanggal 20 juni ketika saya sedang buang air kecil di toilet, tiba-tiba kakak kelas saya datang mengampiri sya. saya di siram dengan air 1 ember, di tampar sebanyak 3 kali, di pukul akai tempat bekal, dan saya juga di cekik hingga kesulitan untuk bernafas. ketika saya menanyakan kenapa dia melakukannya, katanya karena cowok kakak ini suka sama saya. padahal say a aja gak kenal sama kakak ini dan cowo nya. sekarang say amenjadi takut jika pergi ke sekolah.karena takut bertemu dengan kakak itu dan kejadian yang sama terulang kembali.",
+    "unggah_bukti": ""
   },
   {
+    "id_polsek": "-NXsKgeUC3_C8Xt9lgvM",
+    "status_laporan": "diterima",
     "nama": "Suci Intan",
     "usia": "22 tahun",
     "telp": "0878 6521 7819",
     "alamat": "Perumahan Green Nongsa City, blok A no.19, Nongsa, Batam",
     "lokasi_kejadian": "Supermarket",
-    "tanggal_kejadian": "12 Juni 2023",
+    "tanggal_kejadian": "12/06/2023",
     "judul_laporan": "Pelecehan seksual oleh lelaki tidak dikenali",
-    "jenis_laporan": "Pelecehan Seksual",
-    "isi_laporan": "Saya mendapatkan pelcehan seksual saat sedang berada di supermarket,ada seorang laki-laki tidak dikenali mengikuti saya terus, kemudian dia perlahan mendekat dan meraba bagian dada saya lalu pergi, saya merasa trauma dengan kejadian tersebut dan ingin kasus ini segera ditangani."
+    "jenis_kekerasan": "Pelecehan Seksual",
+    "isi_laporan": "Saya mendapatkan pelcehan seksual saat sedang berada di supermarket,ada seorang laki-laki tidak dikenali mengikuti saya terus, kemudian dia perlahan mendekat dan meraba bagian dada saya lalu pergi, saya merasa trauma dengan kejadian tersebut dan ingin kasus ini segera ditangani.",
+    "unggah_bukti": ""
   }
 ]

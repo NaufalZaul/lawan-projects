@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 // import Chart from "../../components/Chart";
 import { useLocation } from "react-router-dom";
 import { Icon } from '@iconify/react'
@@ -7,24 +7,24 @@ import { Chart, LineController, LineElement, PointElement, LinearScale, Title, C
 export default function Dasboard() {
   const { state } = useLocation();
 
-  const [chart, setChart] = useState({
-    type: 'line',
-    data: {
-      labels: ['Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni', 'Juli', 'Agustus', 'September', 'Oktober', 'November', 'Desember'],
-      datasets: [{
-        label: '# of Votes',
-        data: [10, 20, 30, 40, 10, 20, 30, 5, 20, 30, 25, 20],
-        borderWidth: 1
-      }]
-    },
-    options: {
-      scales: {
-        y: {
-          beginAtZero: true
-        }
-      }
-    }
-  })
+  // const [chart, setChart] = useState({
+  //   type: 'line',
+  //   data: {
+  //     labels: ['Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni', 'Juli', 'Agustus', 'September', 'Oktober', 'November', 'Desember'],
+  //     datasets: [{
+  //       label: '# of Votes',
+  //       data: [10, 20, 30, 40, 10, 20, 30, 5, 20, 30, 25, 20],
+  //       borderWidth: 1
+  //     }]
+  //   },
+  //   options: {
+  //     scales: {
+  //       y: {
+  //         beginAtZero: true
+  //       }
+  //     }
+  //   }
+  // })
 
   Chart.register(LineController, LineElement, PointElement, LinearScale, Title, CategoryScale);
 

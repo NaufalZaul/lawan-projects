@@ -1,5 +1,4 @@
 export default function DetailArtikel({ artikel }) {
-  console.log(artikel.image);
   return (
     <div className="p-5">
       <div className="row bg-primary rounded mb-5">

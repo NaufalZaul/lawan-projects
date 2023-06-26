@@ -47,6 +47,8 @@ export default function Laporan() {
   const [dataLaporan, setDataLaporan] = useState([])
   const [dataToModal, setDataToModal] = useState([])
 
+
+
   useEffect(() => {
     onValue(child(ref(database), "laporan/"), (dt) => {
       let dataArr = [];

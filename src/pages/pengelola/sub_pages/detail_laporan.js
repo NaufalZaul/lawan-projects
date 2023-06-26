@@ -1,14 +1,31 @@
+import { useRef } from "react";
 import { Link, useLocation } from "react-router-dom";
 import StorageImage from "../../../api/storage_firebase";
 import Button from "../../../components/Button";
 import { Modal } from "../../../components/Modal";
-
+import PrintPDF from "../../../components/Printpdf";
+import jsPDF from "jspdf";
+import { Icon } from "@iconify/react";
 const storageImage = StorageImage();
 
 export default function DetailLaporan() {
 
   const { state } = useLocation();
+  const templateRef = useRef(null)
 
+  const handlePDF = () => {
+    console.log('sedang download');
+    const doc = new jsPDF({
+      format: 'a1',
+      unit: 'px'
+    })
+
+    doc.html(templateRef, {
+      async callback(doc) {
+        await doc.save('document')
+      }
+    })
+  }
 
   return (
     <div className="w-100 container bg-secondary-subtle p-3 row justify-content-center mx-0">
@@ -58,12 +75,20 @@ export default function DetailLaporan() {
         {state.detailData.dataValue.status_laporan === "diterima" ? (
           <div className="d-flex justify-content-between">
             <Button.ButtonTerima text="Terima" />
-            <Button.ButtonDownload data={state.detailData} text="PDF" />
+            {/* <Button.ButtonDownload text="PDF" download={() => handlePDF()} /> */}
+            <button type="submit"
+              className="btn button-print text-style-button"
+              onClick={() => handlePDF()}>
+              PDF
+              <Icon icon="fluent:document-pdf-20-regular" width="20" height="20" className="ms-2" />
+            </button>
+
             <Button.ButtonTolak text="Tolak" />
           </div>
         ) : (
           <div className="d-flex justify-content-between">
-            <Button.ButtonDownload data={state.detailData} />
+            {/* <Button.ButtonDownload data={state.detailData} /> */}
+            <Button.ButtonDownload text="PDF" download={() => handlePDF()} />
           </div>
         )}
       </div>
@@ -76,28 +101,27 @@ export default function DetailLaporan() {
           <tbody className="text-white">
             <tr>
               <td>Nama</td>
-              <td colSpan={2}>: Zulkarnain</td>
+              <td colSpan={2}>: {state.detailData.dataValue.nama}</td>
             </tr>
             <tr>
-              <td>NIK</td>
-              <td colSpan={2}>: 01234567230158901</td>
-            </tr>
-            <tr>
-              <td>TTL</td>
-              <td colSpan={2}>: Batam, 23 Januari 1985</td>
+              <td>Usia</td>
+              <td colSpan={2}>: {state.detailData.dataValue.usia}</td>
             </tr>
             <tr>
               <td>Telp</td>
-              <td colSpan={2}>: 091234567890</td>
+              <td colSpan={2}>: {state.detailData.dataValue.telp}</td>
             </tr>
             <tr>
               <td>Alamat</td>
-              <td colSpan={2}>
-                : Tiban Mas blok AAA 100, Rt 02, Rw 05, TibanLama, Sekupang, Batam
-              </td>
+              <td colSpan={2}>: {state.detailData.dataValue.alamat}</td>
             </tr>
           </tbody>
         </table>
+      </div>
+
+
+      <div ref={templateRef}>
+        <PrintPDF />
       </div>
 
       <Modal.ModalTerima

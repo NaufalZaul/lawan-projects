@@ -1,4 +1,4 @@
-import { ref, set, get, child } from "https://www.gstatic.com/firebasejs/9.22.1/firebase-database.js";
+import { ref, get, child } from "https://www.gstatic.com/firebasejs/9.22.1/firebase-database.js";
 import { useEffect, useState } from "react";
 import "../../styles/login.css";
 import { database } from "../../api/firebase";
@@ -16,7 +16,7 @@ function controlForm() {
 
     input.addEventListener("blur", (e) => {
       let parent = e.currentTarget.parentNode.parentNode;
-      if (e.currentTarget.value == "") {
+      if (e.currentTarget.value === "") {
         parent.classList.remove("focus");
       }
     });
@@ -73,11 +73,11 @@ export default function Login() {
   return (
     <div className="container-login">
       <div className="img">
-        <img src="./images/image-login.jpg" />
+        <img src="./images/image-login.jpg" alt="" />
       </div>
       <div className="login-content">
         <div className='form'>
-          <img className='mb-4 ' src="./images/logo-large.png" />
+          <img className='mb-4 ' src="./images/logo-large.png" alt="" />
           <h2 className="mb-3 bold-heading-2">LOGIN PENGELOLA</h2>
           <div className="input-div one text-style-navbar">
             <div className="i">

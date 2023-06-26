@@ -1,6 +1,7 @@
-import { PDFDownloadLink } from "@react-pdf/renderer";
-import PrintPDF from "./Printpdf";
+// import { PDFDownloadLink } from "@react-pdf/renderer";
+// import PrintPDF from "./Printpdf";
 import { Icon } from '@iconify/react'
+
 
 const Button = {
   ButtonTerima: (props, { data }) => {
@@ -82,13 +83,15 @@ const Button = {
       <i className="fas fa-check"></i>
     </button>
   ),
-  ButtonDownload: (props, { data }) => (
-    <PDFDownloadLink document={<PrintPDF data={data} />} fileName="Laporan">
-      <button type="button" className="btn button-print text-style-button">
-        {props.text}
-        <Icon icon="fluent:document-pdf-20-regular" width="20" height="20" className="ms-2" />
-      </button>
-    </PDFDownloadLink>
+  ButtonDownload: (props, { download }) => (
+    // <PDFDownloadLink document={<PrintPDF data={data} />} fileName="Laporan">
+    // </PDFDownloadLink>
+    <button type="submit"
+      className="btn button-print text-style-button"
+      onClick={download}>
+      {props.text}
+      <Icon icon="fluent:document-pdf-20-regular" width="20" height="20" className="ms-2" />
+    </button>
   ),
   ButtonTambahAkun: () => (
     <button
