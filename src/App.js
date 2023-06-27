@@ -23,7 +23,7 @@ import Tentang from "./pages/halaman_utama/tentang";
 import Edukasi from "./pages/halaman_utama/edukasi";
 import Kontak from "./pages/halaman_utama/kontak";
 import SuperAdmin from './pages/superadmin/SuperAdmin';
-// import DetailArtikel from "./pages/halaman_utama/sub_pages/detail_artikel";
+import DetailArtikel from "./pages/halaman_utama/sub_pages/detail_artikel";
 import NavbarPengelola from './components/NavbarPengelola'
 import NavbarPengguna from './components/NavbarPengguna'
 import Sidebar from './components/Sidebar'
@@ -64,6 +64,7 @@ function App() {
           <Route path="/edukasi" element={<Edukasi />} />
           <Route path="/kontak" element={<Kontak />} />
           <Route path="/pengelola" element={<Pengelola />} />
+          <Route path="/edukasi/detail-artikel" element={<DetailArtikel />} />
 
           {/* sisi pengelola */}
           <Route path="/login" element={<Login />} />

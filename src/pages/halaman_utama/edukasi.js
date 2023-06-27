@@ -1,24 +1,44 @@
-import { artikel } from "../../api/api";
+// import { artikel } from "../../api/api";
 import { Link } from "react-router-dom";
+import { ref, onValue, child } from "https://www.gstatic.com/firebasejs/9.22.1/firebase-database.js";
+import { database } from "../../api/firebase";
+import { useEffect, useState } from "react";
+import StorageImage from "../../api/storage_firebase";
+
+
+const storageImage = StorageImage()
 
 export default function Edukasi() {
-  // useEffect(() => {
+  const [artikel, setArtikel] = useState([])
+  useEffect(() => {
 
-  //   let textLines = document.querySelectorAll(".text-line"),
-  //     textShort = "";
-  //   const deviceSize = screen.width,
-  //     lawan = document.querySelector(".lawan"),
-  //     lawanReverse = document.querySelector(".-lawan");
-  //   if (deviceSize < 400) {
-  //     lawan.style.transform = "rotate(10deg)";
-  //     lawanReverse.style.transform = "rotate(-10deg)";
-  //     for (let textLine of textLines) {
-  //       const limit = (string = "", limit) => string.substring(0, limit);
-  //       textShort = limit(textLine.textContent, 37);
-  //       textLine.innerHTML = textShort;
-  //     }
-  //   }
-  // })
+    //   let textLines = document.querySelectorAll(".text-line"),
+    //     textShort = "";
+    //   const deviceSize = screen.width,
+    //     lawan = document.querySelector(".lawan"),
+    //     lawanReverse = document.querySelector(".-lawan");
+    //   if (deviceSize < 400) {
+    //     lawan.style.transform = "rotate(10deg)";
+    //     lawanReverse.style.transform = "rotate(-10deg)";
+    //     for (let textLine of textLines) {
+    //       const limit = (string = "", limit) => string.substring(0, limit);
+    //       textShort = limit(textLine.textContent, 37);
+    //       textLine.innerHTML = textShort;
+    //     }
+    //   }
+
+
+    onValue(child(ref(database), "artikel/"), (dt) => {
+      let dataArr = [];
+      dt.forEach((element) => {
+        const dataKey = element.key;
+        const dataVal = element.val();
+        dataArr.push({ idData: dataKey, dataValue: dataVal });
+      });
+      setArtikel(dataArr)
+    });
+  }, [])
+
   return (
     <div className="">
       <div className="hstack bg-black flex-column flex-lg-row">
@@ -285,22 +305,22 @@ export default function Edukasi() {
 
       <div className="row my-5 py-5 mx-0">
         <h2 className="mb-5 text-center fw-bold">Artikel</h2>
-        {artikel.map((val, key) => (
-          <div className="col-lg-3">
-            <Link
-              to="/edukasi/detail_artikel"
-              className="text-decoration-none"
-              state={{ artikel: artikel[key] }}
-            >
-              <div className="card shadow mb-2">
-                <img src={val.image} className="card-img-top" alt="gambar artikel 1" />
-                <div className="card-body">
-                  <p className="card-text">{val.judul}</p>
+        {
+          artikel.map((val, key) => (
+            <div className="col-lg-3">
+              <Link
+                to="/edukasi/detail-artikel"
+                className="text-decoration-none"
+                state={{ artikel: val, image: storageImage.arrArtikel[key] }}>
+                <div className="card shadow mb-2">
+                  <img src={storageImage.arrArtikel[key]} className="card-img-top" alt="gambar artikel 1" />
+                  <div className="card-body">
+                    <p className="card-text">{val.dataValue.judul}</p>
+                  </div>
                 </div>
-              </div>
-            </Link>
-          </div>
-        ))}
+              </Link>
+            </div>
+          ))}
       </div>
     </div>
   );

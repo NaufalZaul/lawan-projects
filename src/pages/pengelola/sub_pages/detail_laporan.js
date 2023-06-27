@@ -1,32 +1,33 @@
-import { useRef } from "react";
 import { Link, useLocation } from "react-router-dom";
 import StorageImage from "../../../api/storage_firebase";
 import Button from "../../../components/Button";
 import { Modal } from "../../../components/Modal";
-import PrintPDF from "../../../components/Printpdf";
-import jsPDF from "jspdf";
-import { Icon } from "@iconify/react";
+
 const storageImage = StorageImage();
+
+console.log(storageImage);
 
 export default function DetailLaporan() {
 
+  // const templateRef = useRef(null)
+
+  // const handlePDF = () => {
+  //   console.log('sedang download');
+  //   let element = () => (
+  //     <PrintPDF />
+  //   )
+  //   const doc = new jsPDF({
+  //     format: 'a1',
+  //     unit: 'px'
+  //   })
+
+  //   doc.html(element, {
+  //     async callback(doc) {
+  //       await doc.save('document')
+  //     }
+  //   })
+  // }
   const { state } = useLocation();
-  const templateRef = useRef(null)
-
-  const handlePDF = () => {
-    console.log('sedang download');
-    const doc = new jsPDF({
-      format: 'a1',
-      unit: 'px'
-    })
-
-    doc.html(templateRef, {
-      async callback(doc) {
-        await doc.save('document')
-      }
-    })
-  }
-
   return (
     <div className="w-100 container bg-secondary-subtle p-3 row justify-content-center mx-0">
       <div className="col-7 d-flex flex-column justify-content-between bg-white p-4">
@@ -63,38 +64,28 @@ export default function DetailLaporan() {
           </div>
         </div>
         <div className="row row-cols-4 my-5 mx-0">
-          <img src={storageImage[1]} alt="" className="my-2" />
-          <img src={storageImage[1]} alt="" className="my-2" />
-          <img src={storageImage[1]} alt="" className="my-2" />
-          <img src={storageImage[1]} alt="" className="my-2" />
-          <img src={storageImage[1]} alt="" className="my-2" />
-          <img src={storageImage[1]} alt="" className="my-2" />
-          <img src={storageImage[1]} alt="" className="my-2" />
+          {
+            storageImage.arrBukti.map(val => (
+              <img src={`${val}`} alt="" className="object-fit-cover my-2" />
+            ))
+          }
         </div>
 
         {state.detailData.dataValue.status_laporan === "diterima" ? (
           <div className="d-flex justify-content-between">
             <Button.ButtonTerima text="Terima" />
-            {/* <Button.ButtonDownload text="PDF" download={() => handlePDF()} /> */}
-            <button type="submit"
-              className="btn button-print text-style-button"
-              onClick={() => handlePDF()}>
-              PDF
-              <Icon icon="fluent:document-pdf-20-regular" width="20" height="20" className="ms-2" />
-            </button>
-
+            <Button.ButtonDownload text="PDF" data={state.detailData} />
             <Button.ButtonTolak text="Tolak" />
           </div>
         ) : (
           <div className="d-flex justify-content-between">
-            {/* <Button.ButtonDownload data={state.detailData} /> */}
-            <Button.ButtonDownload text="PDF" download={() => handlePDF()} />
+            <Button.ButtonDownload text="PDF" data={state.detailData} />
           </div>
         )}
       </div>
       <div className="col-4 bg-blue text-white">
         <div className="text-center my-4">
-          <img className="" src={storageImage[2]} alt="" width="100px" height="100px" />
+          <img className="object-fit-cover rounded-circle" src={storageImage.arrProfil[storageImage.arrProfil.length - 1]} alt="" width="100px" height="100px" />
         </div>
         <table className="table table-borderless">
           <thead></thead>
@@ -117,11 +108,6 @@ export default function DetailLaporan() {
             </tr>
           </tbody>
         </table>
-      </div>
-
-
-      <div ref={templateRef}>
-        <PrintPDF />
       </div>
 
       <Modal.ModalTerima

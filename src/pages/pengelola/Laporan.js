@@ -5,11 +5,9 @@ import { Modal } from "../../components/Modal";
 import { Icon } from '@iconify/react'
 import { ref, onValue, child } from "https://www.gstatic.com/firebasejs/9.22.1/firebase-database.js";
 import { database } from "../../api/firebase";
+import StorageImage from "../../api/storage_firebase";
 
-
-
-
-
+const storageImage = StorageImage()
 
 const $ = require('jquery');
 $.DataTable = require('datatables.net');
@@ -24,7 +22,7 @@ function controlTable() {
       }],
       // ordering: false,
       paging: true,
-      searching: false,
+      // searching: false,
     });
 
     table.on('order.dt page.dt', () => {
@@ -41,9 +39,6 @@ function controlTable() {
 
 export default function Laporan() {
   const { state } = useLocation()
-  console.log(state);
-  // const storageImage = StorageImage()
-
   const [dataLaporan, setDataLaporan] = useState([])
   const [dataToModal, setDataToModal] = useState([])
 
@@ -59,7 +54,7 @@ export default function Laporan() {
       });
       setDataLaporan(dataArr)
     });
-    controlTable()
+    // controlTable()
   }, [])
 
 
@@ -97,7 +92,7 @@ export default function Laporan() {
                 (data.dataValue.status_laporan === state.defaultUrl) ? (
                   <tr key={key} className="text-style-paragraf align-middle" id="data-laporan">
                     <td className="text-center">
-                      <img className="w-100 profile-image" src='images/foto.png' alt="" />
+                      <img className="profile-image" src={storageImage.arrProfil[2]} alt="" width="80px" height="80px" />
                     </td>
                     <td>{data.dataValue.judul_laporan}</td>
                     <td className="text-center">{data.dataValue.jenis_kekerasan}</td>

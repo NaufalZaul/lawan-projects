@@ -2,17 +2,32 @@ import { ref, getDownloadURL, listAll } from 'https://www.gstatic.com/firebasejs
 import { storage } from './firebase';
 
 export default function StorageImage() {
-  const arr = [];
-  const refDB = ref(storage);
+  const arrProfil = [];
+  const arrBukti = [];
+  const arrArtikel = [];
 
-  listAll(refDB).then((res) => {
+  listAll(ref(storage, 'profil/')).then((res) => {
     res.items.forEach(e => {
       getDownloadURL(e).then(a => {
-        arr.push(a)
+        arrProfil.push(a)
       })
-
     })
-
   })
-  return arr;
+
+  listAll(ref(storage, 'bukti/')).then((res) => {
+    res.items.forEach(e => {
+      getDownloadURL(e).then(a => {
+        arrBukti.push(a)
+      })
+    })
+  })
+
+  listAll(ref(storage, 'artikel/')).then((res) => {
+    res.items.forEach(e => {
+      getDownloadURL(e).then(a => {
+        arrArtikel.push(a)
+      })
+    })
+  })
+  return { arrProfil, arrBukti, arrArtikel };
 }
